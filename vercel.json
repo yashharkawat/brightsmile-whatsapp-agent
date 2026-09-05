@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/((?!demo\\.html|dashboard\\.html).*)", "destination": "/api/index" }
+  ]
+}

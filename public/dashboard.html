@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BrightSmile - live dashboard</title>
+<style>
+  body{margin:0;background:#0f172a;color:#e2e8f0;font:14px/1.45 -apple-system,Segoe UI,Roboto,sans-serif}
+  header{padding:18px 24px;border-bottom:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center}
+  header h1{margin:0;font-size:18px}header small{color:#94a3b8}
+  main{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;padding:20px 24px}
+  section{background:#111827;border:1px solid #1f2937;border-radius:12px;padding:16px;min-height:200px}
+  h2{margin:0 0 10px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#94a3b8}
+  table{width:100%;border-collapse:collapse}td,th{padding:6px 8px;border-bottom:1px solid #1f2937;text-align:left;vertical-align:top}th{color:#94a3b8;font-weight:500}
+  .pill{padding:2px 8px;border-radius:10px;font-size:12px}.confirmed{background:#064e3b;color:#6ee7b7}.rescheduled{background:#1e3a8a;color:#93c5fd}.cancelled{background:#3f1d1d;color:#fca5a5}
+  .log{max-height:70vh;overflow:auto}.row{padding:6px 0;border-bottom:1px solid #1f2937;display:flex;gap:10px}.row .who{color:#94a3b8;min-width:130px;font-size:12px}
+  .in{color:#e2e8f0}.out{color:#6ee7b7}.system{color:#fbbf24}.esc{background:#3f1d1d;border:1px solid #7f1d1d;border-radius:8px;padding:8px;margin:6px 0}
+  @media(max-width:900px){main{grid-template-columns:1fr}}
+</style></head><body>
+<header><h1>BrightSmile Dental - WhatsApp agent</h1><small id="meta">loading…</small></header>
+<main>
+  <section><h2>Conversation log</h2><div class="log" id="log"></div></section>
+  <div style="display:grid;gap:20px">
+    <section><h2>Bookings</h2><table><thead><tr><th>When (IST)</th><th>Patient</th><th>Treatment</th><th>Status</th></tr></thead><tbody id="bk"></tbody></table></section>
+    <section><h2>Escalations</h2><div id="esc"></div></section>
+  </div>
+</main>
+<script>
+const fmt=s=>new Date(s).toLocaleString('en-IN',{timeZone:'Asia/Kolkata',weekday:'short',day:'numeric',month:'short',hour:'numeric',minute:'2-digit'});
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+let last='';
+async function tick(){try{const s=await(await fetch('/api/state')).json();const key=JSON.stringify(s).length+':'+(s.messages.at(-1)?.id);if(key===last)return;last=key;
+  document.getElementById('log').innerHTML=s.messages.map(m=>`<div class="row"><span class="who">${fmt(m.ts)}<br>${esc(m.name||'')} ${esc(m.phone)}<br><i>${m.channel}</i></span><span class="${m.direction}">${m.direction==='out'?'Asha: ':m.direction==='system'?'⚠ ':''}${esc(m.text)}</span></div>`).join('');
+  const l=document.getElementById('log');l.scrollTop=l.scrollHeight;
+  document.getElementById('bk').innerHTML=s.bookings.map(b=>`<tr><td>${fmt(b.start)} · ${b.minutes}m</td><td>${esc(b.patient)}<br><small>${esc(b.phone)}</small></td><td>${esc(b.treatment)}</td><td><span class="pill ${b.status}">${b.status}</span></td></tr>`).join('')||'<tr><td colspan=4 style="color:#64748b">none yet</td></tr>';
+  document.getElementById('esc').innerHTML=s.escalations.map(e=>`<div class="esc">${fmt(e.ts)} · +${esc(e.phone)}<br>${esc(e.summary)}<br><small>${e.notified?'receptionist pinged on WhatsApp':'logged (no receptionist number configured)'}</small></div>`).join('')||'<span style="color:#64748b">none</span>';
+  document.getElementById('meta').textContent=`${s.messages.length} messages · ${s.bookings.filter(b=>b.status!=='cancelled').length} active bookings · refreshes every 2s`;}catch(e){}}
+tick();setInterval(tick,2000);
+</script></body></html>

@@ -1,0 +1,18 @@
+{
+  "name": "brightsmile-whatsapp-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --no-warnings src/index.js",
+    "dev": "node --no-warnings --watch src/index.js",
+    "test": "node --no-warnings --test test/"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.110.0",
+    "@hono/node-server": "^1.14.0",
+    "dotenv": "^16.4.5",
+    "hono": "^4.7.0",
+    "pg": "^8.23.0"
+  }
+}
