@@ -13,7 +13,10 @@ const MODEL = process.env.MODEL || "claude-opus-5";
 const EFFORT = process.env.EFFORT || "low";
 const MAX_HISTORY = 40; // messages kept per phone
 
-function systemPrompt() {
+function systemPrompt(channel = "whatsapp") {
+  const voiceHint = channel === "voice"
+    ? "\n\nVOICE CALL MODE: you are speaking on a phone call. Reply in one or two short spoken sentences, no lists, no emojis, no markdown. Say times like 'nine thirty in the morning'. Confirm before booking."
+    : "";
   const today = new Intl.DateTimeFormat("en-IN", { timeZone: "Asia/Kolkata", weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(new Date());
   return (
     PROMPT_TEMPLATE.replace("{{ $now.format('cccc, d LLLL yyyy') }}", today + ` (${todayIst()})`) +
@@ -21,7 +24,7 @@ function systemPrompt() {
     `\n- book_appointment(patient, treatment, start) with the exact ISO start returned by get_free_slots.` +
     `\n- reschedule_appointment(new_start) moves the patient's existing booking.` +
     `\n- escalate_to_human(summary) for emergencies or when the patient asks for a person.` +
-    `\nThe patient's WhatsApp number is already known; never ask for it.`
+    `\nThe patient's WhatsApp number is already known; never ask for it.` + voiceHint
   );
 }
 
@@ -126,7 +129,7 @@ export async function reply({ phone, name, text, channel = "whatsapp" }) {
     // OpenAI-style history is stored under a separate key so the two formats never mix
     const orHistory = await getHistory(phone + "#or");
     orHistory.push({ role: "user", content: text });
-    const { text: answer } = await openRouterReply({ system: systemPrompt(), history: orHistory, ctx });
+    const { text: answer } = await openRouterReply({ system: systemPrompt(channel), history: orHistory, ctx });
     while (orHistory.length > MAX_HISTORY) { orHistory.shift(); while (orHistory.length && orHistory[0].role !== "user") orHistory.shift(); }
     await saveHistory(phone + "#or", name, orHistory);
     return answer;
@@ -138,7 +141,7 @@ export async function reply({ phone, name, text, channel = "whatsapp" }) {
     const res = await client.messages.create({
       model: MODEL,
       max_tokens: 1024,
-      system: [{ type: "text", text: systemPrompt(), cache_control: { type: "ephemeral" } }],
+      system: [{ type: "text", text: systemPrompt(channel), cache_control: { type: "ephemeral" } }],
       tools,
       messages: history,
       output_config: { effort: EFFORT },

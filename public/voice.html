@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BrightSmile Voice Agent - live demo</title>
+<style>
+  :root{--bg:#0f172a;--card:#111827;--line:#1f2937;--text:#e2e8f0;--muted:#94a3b8;--accent:#22c55e;--red:#ef4444}
+  *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 -apple-system,Segoe UI,Roboto,sans-serif;display:flex;justify-content:center;align-items:flex-start;gap:32px;padding:32px 16px;min-height:100vh}
+  .call{width:390px;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:28px 22px;display:flex;flex-direction:column;align-items:center;gap:14px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .avatar{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,#22c55e,#0ea5e9);display:grid;place-items:center;font-size:40px;font-weight:700;position:relative}
+  .avatar.live::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:3px solid var(--accent);animation:pulse 1.2s infinite}
+  @keyframes pulse{0%{transform:scale(1);opacity:1}100%{transform:scale(1.25);opacity:0}}
+  h2{margin:0;font-size:20px}.status{color:var(--muted);min-height:20px;text-align:center}
+  .transcript{width:100%;height:300px;overflow:auto;background:#0b1220;border:1px solid var(--line);border-radius:14px;padding:12px;font-size:14px}
+  .line{margin:6px 0}.line b{color:var(--accent)}.line.you b{color:#60a5fa}
+  .btn{border:0;border-radius:50%;width:72px;height:72px;font-size:28px;cursor:pointer;color:#fff;background:var(--accent)}
+  .btn.end{background:var(--red)}.btn:disabled{opacity:.5;cursor:default}
+  aside{max-width:360px;color:#cbd5e1}aside h1{font-size:22px;margin:0 0 8px}aside p{color:#94a3b8}a{color:var(--accent)}
+  .note{font-size:13px;color:#94a3b8}
+  @media(max-width:820px){body{flex-direction:column;align-items:center}}
+</style></head><body>
+<div class="call">
+  <div class="avatar" id="avatar">B</div>
+  <h2>BrightSmile Dental</h2>
+  <div class="status" id="status">Tap the phone to call Asha</div>
+  <div class="transcript" id="transcript"></div>
+  <button class="btn" id="btn" title="Call">📞</button>
+  <div class="note" id="note"></div>
+</div>
+<aside>
+  <h1>Voice receptionist, live</h1>
+  <p>Same booking brain as the WhatsApp agent, on a call. Ask for prices, book, reschedule, or describe an emergency. Bookings land on the <a href="/dashboard.html" target="_blank">live dashboard</a>.</p>
+  <p class="note">Works best in Chrome or Edge on desktop or Android (they provide on-device speech recognition and synthesis). Allow the microphone when asked. Speak, pause, and Asha answers; she listens again when she finishes talking.</p>
+  <p class="note">Phone-number version: the same agent plugs into Twilio or Vapi for a real dial-in number.</p>
+</aside>
+<script>
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+const btn=document.getElementById('btn'), status=document.getElementById('status'), tr=document.getElementById('transcript'), avatar=document.getElementById('avatar'), note=document.getElementById('note');
+const phone='voice-'+(localStorage.getItem('voice_id')||(()=>{const v=Math.random().toString(36).slice(2,8);localStorage.setItem('voice_id',v);return v})());
+let live=false, rec=null, busy=false;
+function say(who,text){const d=document.createElement('div');d.className='line '+(who==='You'?'you':'');d.innerHTML='<b>'+who+':</b> '+text.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));tr.appendChild(d);tr.scrollTop=tr.scrollHeight}
+function pickVoice(){const vs=speechSynthesis.getVoices();return vs.find(v=>/en-IN/i.test(v.lang))||vs.find(v=>/^en/i.test(v.lang)&&/female|Samantha|Google UK English Female/i.test(v.name))||vs.find(v=>/^en/i.test(v.lang))||null}
+function speak(text){return new Promise(res=>{const u=new SpeechSynthesisUtterance(text);const v=pickVoice();if(v)u.voice=v;u.rate=1.02;u.onend=res;u.onerror=res;status.textContent='Asha is speaking…';avatar.classList.add('live');speechSynthesis.cancel();speechSynthesis.speak(u)})}
+async function ask(text){busy=true;say('You',text);status.textContent='Asha is thinking…';
+  try{const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone,name:'Caller',text,channel:'voice'})});const j=await r.json();const a=j.reply||j.error||'Sorry, could you say that again?';say('Asha',a);await speak(a)}
+  catch(e){say('Asha','Sorry, the line dropped. Please try again.');await speak('Sorry, the line dropped. Please try again.')}
+  busy=false;if(live)listen()}
+function listen(){if(!live||busy)return;status.textContent='Listening… (speak, then pause)';avatar.classList.remove('live');
+  rec=new SR();rec.lang='en-IN';rec.interimResults=false;rec.maxAlternatives=1;
+  rec.onresult=e=>{const t=e.results[0][0].transcript.trim();if(t)ask(t)};
+  rec.onerror=e=>{if(e.error==='no-speech'){if(live)setTimeout(listen,300)}else{status.textContent='Mic error: '+e.error;if(live&&e.error!=='not-allowed')setTimeout(listen,800)}};
+  rec.onend=()=>{if(live&&!busy&&status.textContent.startsWith('Listening'))setTimeout(listen,200)};
+  try{rec.start()}catch(e){}}
+async function start(){if(!SR){status.textContent='This browser has no speech recognition. Use Chrome or Edge.';return}
+  live=true;btn.textContent='⏹';btn.classList.add('end');btn.title='End call';tr.innerHTML='';
+  await fetch('/api/reset',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone})}).catch(()=>{});
+  const greet='Hi, this is Asha at BrightSmile Dental. How can I help you today?';say('Asha',greet);await speak(greet);listen()}
+function end(){live=false;try{rec&&rec.stop()}catch(e){}speechSynthesis.cancel();btn.textContent='📞';btn.classList.remove('end');btn.title='Call';avatar.classList.remove('live');status.textContent='Call ended. Tap to call again.'}
+btn.onclick=()=>live?end():start();
+speechSynthesis.onvoiceschanged=()=>{};
+if(!SR)note.textContent='Speech recognition is not available in this browser (Safari/Firefox). Open this page in Chrome.';
+</script></body></html>

@@ -65,11 +65,12 @@ async function handleWebhook(body) {
 
 // --- Web simulator (same agent, channel=web, no WhatsApp sends) ---
 app.post("/api/chat", async (c) => {
-  const { phone = "web-demo", name = "Web visitor", text } = await c.req.json();
+  const { phone = "web-demo", name = "Web visitor", text, channel: ch } = await c.req.json();
   if (!text?.trim()) return c.json({ error: "text required" }, 400);
-  await logMessage({ direction: "in", phone, name, text, channel: "web" });
-  const answer = await reply({ phone, name, text, channel: "web" });
-  await logMessage({ direction: "out", phone, name, text: answer, channel: "web" });
+  const channel = ch === "voice" ? "voice" : "web";
+  await logMessage({ direction: "in", phone, name, text, channel });
+  const answer = await reply({ phone, name, text, channel });
+  await logMessage({ direction: "out", phone, name, text: answer, channel });
   return c.json({ reply: answer });
 });
 app.post("/api/reset", async (c) => {
@@ -84,6 +85,7 @@ app.get("/health", async (c) => { try { await dashboardState(); } catch (e) { /*
 app.get("/", (c) => c.redirect("/demo.html"));
 app.get("/demo", (c) => c.redirect("/demo.html"));
 app.get("/dashboard", (c) => c.redirect("/dashboard.html"));
+app.get("/voice", (c) => c.redirect("/voice.html"));
 
 export default app;
 
