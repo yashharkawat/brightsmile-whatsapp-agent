@@ -1,6 +1,7 @@
 import "dotenv/config";
 import { Hono } from "hono";
 import { createHmac, timingSafeEqual } from "node:crypto";
+import { waitUntil } from "@vercel/functions";
 import { logMessage, seenWaId, dashboardState, resetConversation } from "./db.js";
 import { reply } from "./agent.js";
 import { sendText, markReadTyping } from "./whatsapp.js";
@@ -31,7 +32,7 @@ app.post("/webhook", async (c) => {
   try { body = JSON.parse(raw); } catch { return c.text("bad json", 400); }
   // Acknowledge immediately; process in the background (on Vercel, waitUntil keeps the function alive).
   const job = handleWebhook(body).catch((e) => console.error("[webhook]", e));
-  if (c.env?.waitUntil) c.env.waitUntil(job);
+  if (process.env.VERCEL) waitUntil(job);
   return c.json({ status: "ok" });
 });
 
