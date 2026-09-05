@@ -45,6 +45,12 @@ Entry `api/index.js` (Node listener around the Hono app), `vercel.json` rewrites
 Set DATABASE_URL (Supabase) + the vars in `.env.vercel` in Project > Settings > Environment Variables, then point the Meta
 callback at https://brightsmile-whatsapp-agent.vercel.app/webhook. Without DATABASE_URL it falls back to SQLite in /tmp (ephemeral).
 
+## Voice
+- Browser: `/voice.html` (Chrome speech APIs, free). Channel `voice` makes the agent answer in 1-2 spoken sentences.
+- Phone (Twilio): point the number's Voice webhook at `https://brightsmile-whatsapp-agent.vercel.app/twilio/voice` (HTTP POST).
+  `src/twilio.js` answers with TwiML (<Gather input="speech"> + <Say voice="Polly.Aditi">). No secrets needed for inbound;
+  set `TWILIO_AUTH_TOKEN` to enforce signature checks. Calls are logged with channel `phone`, conversation id `tel:+91...`.
+
 ## Test flows
 1. "Do you do whitening, how much?" -> 8,000, offers to book.
 2. "Cleaning on Saturday morning?" -> two real free slots -> books one -> row on /dashboard.

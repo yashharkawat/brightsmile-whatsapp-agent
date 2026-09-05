@@ -5,6 +5,7 @@ import { waitUntil } from "@vercel/functions";
 import { logMessage, seenWaId, dashboardState, resetConversation, dbStatus } from "./db.js";
 import { reply } from "./agent.js";
 import { sendText, markReadTyping } from "./whatsapp.js";
+import { twilio } from "./twilio.js";
 
 const app = new Hono();
 const PORT = Number(process.env.PORT || 8790);
@@ -79,6 +80,8 @@ app.post("/api/reset", async (c) => {
   await resetConversation(phone + "#or");
   return c.json({ ok: true });
 });
+app.route("/twilio", twilio);
+
 app.get("/api/state", async (c) => c.json(await dashboardState()));
 app.get("/health", async (c) => { try { await dashboardState(); } catch (e) { /* surfaced via dbStatus */ } return c.json({ ok: true, db: dbStatus.kind, db_error: dbStatus.error, llm: process.env.ANTHROPIC_API_KEY ? process.env.MODEL || "claude-opus-5" : process.env.OPENROUTER_API_KEY ? "openrouter (free models, auto-rotate)" : "mock", whatsapp: !!process.env.WHATSAPP_TOKEN }); });
 

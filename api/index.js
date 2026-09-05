@@ -11,7 +11,10 @@ export default async function handler(req, res) {
   let body;
   if (!["GET", "HEAD"].includes(method)) {
     if (req.body !== undefined && req.body !== null) {
-      body = typeof req.body === "string" || Buffer.isBuffer(req.body) ? req.body : JSON.stringify(req.body);
+      const ct = String(req.headers["content-type"] || "");
+      if (typeof req.body === "string" || Buffer.isBuffer(req.body)) body = req.body;
+      else if (ct.includes("application/x-www-form-urlencoded")) body = new URLSearchParams(req.body).toString();
+      else body = JSON.stringify(req.body);
     } else {
       const chunks = [];
       for await (const chunk of req) chunks.push(chunk);
