@@ -39,6 +39,12 @@ Public URL is fixed: https://overbashful-seema-postulational.ngrok-free.dev (per
 LLM: `ANTHROPIC_API_KEY` (preferred) or `OPENROUTER_API_KEY` + `OPENROUTER_MODEL` (OpenAI-compatible, free models work
 but tool-calling quality varies); neither set = mock.
 
+## Deploy (Vercel)
+Repo github.com/yashharkawat/brightsmile-whatsapp-agent -> Vercel project brightsmile-whatsapp-agent (Hobby, auto-deploy on push to main).
+Entry `api/index.js` (Node listener around the Hono app), `vercel.json` rewrites everything except the two static pages to it.
+Set DATABASE_URL (Supabase) + the vars in `.env.vercel` in Project > Settings > Environment Variables, then point the Meta
+callback at https://brightsmile-whatsapp-agent.vercel.app/webhook. Without DATABASE_URL it falls back to SQLite in /tmp (ephemeral).
+
 ## Test flows
 1. "Do you do whitening, how much?" -> 8,000, offers to book.
 2. "Cleaning on Saturday morning?" -> two real free slots -> books one -> row on /dashboard.
