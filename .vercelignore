@@ -1,0 +1,6 @@
+data
+logs
+ngrok.yml
+.env
+.env.vercel
+test

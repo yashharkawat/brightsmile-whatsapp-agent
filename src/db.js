@@ -73,7 +73,7 @@ async function sqliteBackend() {
   const { DatabaseSync } = await import("node:sqlite");
   const { mkdirSync } = await import("node:fs");
   const { dirname } = await import("node:path");
-  const DB_PATH = process.env.DB_PATH || "./data/brightsmile.db";
+  const DB_PATH = process.env.DB_PATH || (process.env.VERCEL ? "/tmp/brightsmile.db" : "./data/brightsmile.db"); // Vercel FS is read-only except /tmp
   mkdirSync(dirname(DB_PATH), { recursive: true });
   const db = new DatabaseSync(DB_PATH);
   db.exec(`
