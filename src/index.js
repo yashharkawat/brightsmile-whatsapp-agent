@@ -2,7 +2,7 @@ import "dotenv/config";
 import { Hono } from "hono";
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { waitUntil } from "@vercel/functions";
-import { logMessage, seenWaId, dashboardState, resetConversation } from "./db.js";
+import { logMessage, seenWaId, dashboardState, resetConversation, dbStatus } from "./db.js";
 import { reply } from "./agent.js";
 import { sendText, markReadTyping } from "./whatsapp.js";
 
@@ -79,7 +79,7 @@ app.post("/api/reset", async (c) => {
   return c.json({ ok: true });
 });
 app.get("/api/state", async (c) => c.json(await dashboardState()));
-app.get("/health", (c) => c.json({ ok: true, llm: process.env.ANTHROPIC_API_KEY ? process.env.MODEL || "claude-opus-5" : process.env.OPENROUTER_API_KEY ? "openrouter:" + (process.env.OPENROUTER_MODEL || "openai/gpt-oss-120b:free") : "mock", whatsapp: !!process.env.WHATSAPP_TOKEN }));
+app.get("/health", async (c) => { try { await dashboardState(); } catch (e) { /* surfaced via dbStatus */ } return c.json({ ok: true, db: dbStatus.kind, db_error: dbStatus.error, llm: process.env.ANTHROPIC_API_KEY ? process.env.MODEL || "claude-opus-5" : process.env.OPENROUTER_API_KEY ? "openrouter:" + (process.env.OPENROUTER_MODEL || "openai/gpt-oss-120b:free") : "mock", whatsapp: !!process.env.WHATSAPP_TOKEN }); });
 
 app.get("/", (c) => c.redirect("/demo.html"));
 app.get("/demo", (c) => c.redirect("/demo.html"));

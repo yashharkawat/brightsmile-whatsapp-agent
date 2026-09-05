@@ -1,9 +1,22 @@
 // Storage: Postgres (DATABASE_URL, used on Vercel / Supabase) or local SQLite (node:sqlite) when unset.
 // Every function is async so callers do not care which backend is active.
-const PG_URL = process.env.DATABASE_URL;
+const PG_URL = (process.env.DATABASE_URL || "").trim().replace(/^["']|["']$/g, "");
 const now = () => new Date().toISOString();
 
-const backend = PG_URL ? await pgBackend() : await sqliteBackend();
+// Lazy init so a bad DATABASE_URL surfaces as a readable error on /health instead of crashing the function at import.
+let backendPromise = null;
+export let dbStatus = { kind: PG_URL ? "postgres" : "sqlite", error: null };
+function getBackend() {
+  if (!backendPromise) {
+    backendPromise = (PG_URL ? pgBackend() : sqliteBackend()).catch(async (e) => {
+      console.error("[db] backend init failed:", e.message);
+      dbStatus = { kind: "sqlite (fallback)", error: `${dbStatus.kind}: ${e.message}` };
+      return sqliteBackend();
+    });
+  }
+  return backendPromise;
+}
+const backend = new Proxy({}, { get: (_, fn) => async (...args) => (await getBackend())[fn](...args) });
 
 export const logMessage = (m) => backend.logMessage(m);
 export const seenWaId = (id) => backend.seenWaId(id);
@@ -20,7 +33,7 @@ export const dashboardState = () => backend.dashboardState();
 // ---------------------------------------------------------------- Postgres
 async function pgBackend() {
   const { default: pg } = await import("pg");
-  const pool = new pg.Pool({ connectionString: PG_URL, max: 3, ssl: { rejectUnauthorized: false } });
+  const pool = new pg.Pool({ connectionString: PG_URL, max: 3, ssl: { rejectUnauthorized: false }, connectionTimeoutMillis: 8000 });
   const q = async (text, params = []) => (await pool.query(text, params)).rows;
   await q(`
     CREATE TABLE IF NOT EXISTS bs_messages (id SERIAL PRIMARY KEY, ts TEXT NOT NULL, direction TEXT NOT NULL, phone TEXT NOT NULL,
