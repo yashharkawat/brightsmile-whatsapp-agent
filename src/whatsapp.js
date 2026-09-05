@@ -2,7 +2,8 @@
 const GRAPH = "https://graph.facebook.com/v21.0";
 
 function creds() {
-  return { token: process.env.WHATSAPP_TOKEN, phoneId: process.env.WHATSAPP_PHONE_NUMBER_ID };
+  // Phone number id is not a secret; default to the BrightSmile test number so an empty env var cannot break sends.
+  return { token: process.env.WHATSAPP_TOKEN, phoneId: process.env.WHATSAPP_PHONE_NUMBER_ID || "1018490624686932" };
 }
 
 async function post(body) {
