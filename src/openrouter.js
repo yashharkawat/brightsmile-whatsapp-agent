@@ -9,6 +9,11 @@ const PREFERRED = (process.env.OPENROUTER_MODEL || "z-ai/glm-5.2:free,minimax/mi
   .split(",").map((m) => m.trim()).filter(Boolean);
 const COOLDOWN_MS = 15 * 60_000; // a model that failed is skipped for 15 minutes
 const LIST_TTL_MS = 60 * 60_000;
+// A free model that queues can hang for a minute with no response. Without a timeout the caller just waits,
+// which is what made voice and chat feel slow. Fail fast and rotate instead.
+const REQUEST_TIMEOUT_MS = Number(process.env.OPENROUTER_TIMEOUT_MS || 8000);
+const MAX_MODELS_PER_CALL = 4; // worst case ~32 s instead of ~8 models x unbounded
+const MAX_TOKENS = Number(process.env.OPENROUTER_MAX_TOKENS || 220); // a receptionist answers in a sentence or two
 
 const cooldown = new Map(); // model -> timestamp until which it is skipped
 let cachedList = { at: 0, models: [] };
@@ -31,7 +36,9 @@ async function candidateModels() {
         at: Date.now(),
         models: data
           .filter((m) => m.id.endsWith(":free") && m.pricing?.prompt === "0" && (m.supported_parameters || []).includes("tools"))
-          .sort((a, b) => (b.context_length || 0) - (a.context_length || 0))
+          // Smallest context first: the fallback tail is only reached when the preferred models fail, and
+          // there we want the FASTEST model, not the biggest. Huge-context free models are the slow ones.
+          .sort((a, b) => (a.context_length || 0) - (b.context_length || 0))
           .map((m) => m.id),
       };
     } catch (e) {
@@ -53,9 +60,22 @@ async function complete(body) {
   };
   let last = "";
   const models = await candidateModels();
-  for (const model of models.slice(0, 8)) {
-    const res = await fetch(`${BASE}/chat/completions`, { method: "POST", headers, body: JSON.stringify({ model, ...body }) });
-    const json = await res.json().catch(() => ({}));
+  for (const model of models.slice(0, MAX_MODELS_PER_CALL)) {
+    const ac = new AbortController();
+    const timer = setTimeout(() => ac.abort(), REQUEST_TIMEOUT_MS);
+    let res, json;
+    try {
+      res = await fetch(`${BASE}/chat/completions`, { method: "POST", headers, body: JSON.stringify({ model, ...body }), signal: ac.signal });
+      json = await res.json().catch(() => ({}));
+    } catch (e) {
+      // AbortError = the model was too slow to be useful here; cool it down and move on.
+      last = `${e.name === "AbortError" ? `timeout after ${REQUEST_TIMEOUT_MS}ms` : e.message} (${model})`;
+      console.warn("[openrouter] " + last);
+      cooldown.set(model, Date.now() + COOLDOWN_MS);
+      continue;
+    } finally {
+      clearTimeout(timer);
+    }
     if (res.ok && !json.error && json.choices?.[0]?.message) return { json, model };
     last = `${res.status} (${model}): ${json.error?.message || JSON.stringify(json).slice(0, 160)}`;
     console.warn("[openrouter] " + last);
@@ -69,7 +89,7 @@ async function complete(body) {
 export async function openRouterReply({ system, history, ctx }) {
   let text = "", model = "";
   for (let turn = 0; turn < 8; turn++) {
-    const r = await complete({ messages: [{ role: "system", content: system }, ...history], tools: oaTools(), tool_choice: "auto", max_tokens: 600 });
+    const r = await complete({ messages: [{ role: "system", content: system }, ...history], tools: oaTools(), tool_choice: "auto", max_tokens: MAX_TOKENS });
     model = r.model;
     const msg = r.json.choices[0].message;
     history.push({ role: "assistant", content: msg.content ?? "", tool_calls: msg.tool_calls });
