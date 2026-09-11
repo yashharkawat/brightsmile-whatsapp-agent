@@ -1,4 +1,13 @@
 {
+  "redirects": [
+    { "source": "/", "destination": "https://zojoofficial.com/whatsapp", "permanent": false },
+    { "source": "/demo", "destination": "https://zojoofficial.com/whatsapp", "permanent": false },
+    { "source": "/voice", "destination": "https://zojoofficial.com/voice", "permanent": false },
+    { "source": "/dashboard", "destination": "https://zojoofficial.com/dashboard", "permanent": false },
+    { "source": "/demo.html", "missing": [{ "type": "query", "key": "via" }], "destination": "https://zojoofficial.com/whatsapp", "permanent": false },
+    { "source": "/voice.html", "missing": [{ "type": "query", "key": "via" }], "destination": "https://zojoofficial.com/voice", "permanent": false },
+    { "source": "/dashboard.html", "missing": [{ "type": "query", "key": "via" }], "destination": "https://zojoofficial.com/dashboard", "permanent": false }
+  ],
   "rewrites": [
     {
       "source": "/((?!demo\\.html|dashboard\\.html|voice\\.html).*)",
