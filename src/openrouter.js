@@ -97,6 +97,9 @@ export function cleanReply(raw, system = "", userText = "") {
   t = t.replace(/<(think|thinking|reasoning|analysis)>[\s\S]*?<\/\1>/gi, " ");
   t = t.replace(/<(think|thinking|reasoning|analysis)>[\s\S]*$/i, " ");   // unterminated block
   t = t.replace(/^[\s\S]*?<\/(think|thinking|reasoning|analysis)>/i, " "); // stray closing tag
+  // some free models emit their tool-call syntax as plain text instead of a tool_calls field
+  t = t.replace(/<\|[a-z_]*tool_call[a-z_]*\|>/gi, " ").replace(/<\|[a-z_]+\|>/g, " ");
+  if (/^\s*\[?\s*(get_free_slots|book_appointment|reschedule_appointment|escalate_to_human)\s*\(/i.test(t)) return "";
   t = t.trim();
   if (!t) return "";
   // Some models label the answer. Take what comes after the last such label.
