@@ -95,7 +95,7 @@ async function complete(body) {
 // on questions as ordinary as Sunday hours (found 14 Sep 2026 while probing a live pitch link).
 // Only openers that no receptionist would ever say stay in the list; the real detector is REASONING_TELL.
 const REASONING_OPENER = /^\s*(the user|the assistant|okay,|ok,|alright,|let'?s|first,|so,|now,|according to|based on the rules|per the rules|hmm)\b/i;
-const REASONING_TELL = /\b(we need to|we should|i should|i need to|the user (asks|says|wants)|according to (the )?rules|per the rules|the rule:|instruction says|let'?s do that|thus:|so we (should|can|could)|probably answer)\b/i;
+const REASONING_TELL = /\b(we need to|we should|i should|i need to|the user (asks|says|wants|is asking)|the (question|answer) is\b(?!\s*[a-z]*\s*(yes|no)\b)|they are asking|according to (the )?rules|per the rules|the rule:|instruction says|let'?s do that|thus:|so we (should|can|could)|probably answer)\b/i;
 
 export function cleanReply(raw, system = "", userText = "") {
   let t = String(raw || "");
@@ -136,7 +136,11 @@ export function cleanReply(raw, system = "", userText = "") {
     const cut = Math.max(t.lastIndexOf("."), t.lastIndexOf("!"), t.lastIndexOf("?"));
     if (cut > 30) t = t.slice(0, cut + 1);
   }
-  return t.trim();
+  t = t.trim();
+  // A short fragment with no ending is the tail of reasoning the guards above cut in half
+  // ("The question is") - never send it, let the caller's retry produce a real sentence.
+  if (t.length < 25 && !/[.!?…]["\u2019']?$/.test(t) && !/\d/.test(t)) return "";
+  return t;
 }
 
 /** history: OpenAI-style messages (system excluded). Returns { text, history, model }. */
@@ -171,5 +175,5 @@ export async function openRouterReply({ system, history, ctx }) {
       model = r.model;
     } catch { /* fall through to the safe line */ }
   }
-  return { text: text || "Sorry, could you say that again?", history, model };
+  return { text: text || "Let me check that with the team and come right back to you. Would you like me to book you a slot in the meantime?", history, model };
 }
