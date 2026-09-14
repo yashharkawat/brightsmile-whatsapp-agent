@@ -1048,5 +1048,404 @@
    "Do you do home therapy?",
    "Are you open on Sunday?"
   ]
+ },
+ "flexability-physiotherapy-clinic": {
+  "name": "Flexability Physiotherapy Clinic",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Koramangala",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "dr-paws-jayanagar-veterinary-clinic": {
+  "name": "Dr. Paws Jayanagar   Veterinary Clinic",
+  "assistant": "Asha",
+  "category": "veterinary",
+  "area": "Jayanagar",
+  "hours": "Mon-Sun 9:00-21:00",
+  "services": [
+   "Consultation and vaccination",
+   "Deworming and grooming",
+   "Surgery and dental",
+   "Diagnostics and lab",
+   "Emergency care"
+  ],
+  "prompts": [
+   "My dog has been vomiting since morning",
+   "Are you open right now?",
+   "Can I bring my cat in this evening?",
+   "Do you do vaccinations?",
+   "Do you take emergencies at night?"
+  ]
+ },
+ "nirman-hitech-diagnostic-centre-for-pe": {
+  "name": "Nirman Hitech Diagnostic Centre for Pets",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "HSR Layout",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "eluno-fine-eyewear-jayanagar": {
+  "name": "Eluno - Fine Eyewear - Jayanagar",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "asha-pet-clinic": {
+  "name": "ASHA PET CLINIC",
+  "assistant": "Asha",
+  "category": "veterinary",
+  "area": "Marathahalli",
+  "hours": "Mon-Sun 9:00-21:00",
+  "services": [
+   "Consultation and vaccination",
+   "Deworming and grooming",
+   "Surgery and dental",
+   "Diagnostics and lab",
+   "Emergency care"
+  ],
+  "prompts": [
+   "My dog has been vomiting since morning",
+   "Are you open right now?",
+   "Can I bring my cat in this evening?",
+   "Do you do vaccinations?",
+   "Do you take emergencies at night?"
+  ]
+ },
+ "westend-veterinary-hospital": {
+  "name": "Westend Veterinary Hospital",
+  "assistant": "Asha",
+  "category": "veterinary",
+  "area": "Rajajinagar",
+  "hours": "Mon-Sun 9:00-21:00",
+  "services": [
+   "Consultation and vaccination",
+   "Deworming and grooming",
+   "Surgery and dental",
+   "Diagnostics and lab",
+   "Emergency care"
+  ],
+  "prompts": [
+   "My dog has been vomiting since morning",
+   "Are you open right now?",
+   "Can I bring my cat in this evening?",
+   "Do you do vaccinations?",
+   "Do you take emergencies at night?"
+  ]
+ },
+ "kshema-diagnostic-centre": {
+  "name": "Kshema Diagnostic Centre",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "JP Nagar",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "lotus-diagnostic-centre": {
+  "name": "Lotus Diagnostic Centre",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "Indiranagar",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "kiran-nuclear-medicine-and-pet-ct-scan": {
+  "name": "KIRAN NUCLEAR MEDICINE AND PET CT SCAN CENTRE -INDIRANAGAR",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "Indiranagar",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "acura-diagnostic-centre-healthcare": {
+  "name": "Acura Diagnostic Centre & Healthcare",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "Banashankari",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "pathocon-diagnostics": {
+  "name": "Pathocon Diagnostics",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "Rajajinagar",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "focus-diagnostics-centre-speciality-cl": {
+  "name": "Focus Diagnostics Centre & Speciality Clinics",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "Rajajinagar",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "isha-diagnostics-and-research-private-": {
+  "name": "ISHA DIAGNOSTICS AND RESEARCH PRIVATE LIMITED",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "Rajajinagar",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "sculp-x-physiotherapy-and-fitness": {
+  "name": "Sculp X Physiotherapy and Fitness",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "arch-physiotherapy-and-rehabilitation-": {
+  "name": "ARCH Physiotherapy and Rehabilitation   Physiotherapy In Bangalore",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "eva-physiotherapy-clinic": {
+  "name": "Eva Physiotherapy Clinic",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "posture-clinic-best-physiotherapy-clin": {
+  "name": "Posture Clinic - Best Physiotherapy Clinic In HSR Layout",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "HSR Layout",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "quantum-physiotherapy-sports-rehab": {
+  "name": "Quantum Physiotherapy & Sports Rehab",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "HSR Layout",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "sports-orthopedics-institute-dr-naveen": {
+  "name": "Sports Orthopedics Institute   Dr Naveen Kumar LV   Dr Sameer KM   Dr",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "HSR Layout",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
  }
 }
