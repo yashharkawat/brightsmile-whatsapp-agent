@@ -9,10 +9,11 @@ const PREFERRED = (process.env.OPENROUTER_MODEL || "z-ai/glm-5.2:free,minimax/mi
   .split(",").map((m) => m.trim()).filter(Boolean);
 const COOLDOWN_MS = 15 * 60_000; // a model that failed is skipped for 15 minutes
 const LIST_TTL_MS = 60 * 60_000;
-// A free model that queues can hang for a minute with no response. Without a timeout the caller just waits,
-// which is what made voice and chat feel slow. Fail fast and rotate instead.
-const REQUEST_TIMEOUT_MS = Number(process.env.OPENROUTER_TIMEOUT_MS || 8000);
-const MAX_MODELS_PER_CALL = 4; // worst case ~32 s instead of ~8 models x unbounded
+// A free model that queues can hang for a minute with no response. Without a timeout the caller just waits.
+// 8s was too tight: on 14 Sep 2026 live pitch links were returning "having trouble right now" because every
+// candidate model was aborted before it answered. Rotate, but give each one a real chance first.
+const REQUEST_TIMEOUT_MS = Number(process.env.OPENROUTER_TIMEOUT_MS || 20000);
+const MAX_MODELS_PER_CALL = 6; // a pitched prospect waiting a few seconds beats "having trouble right now"
 const MAX_TOKENS = Number(process.env.OPENROUTER_MAX_TOKENS || 400); // room for a clean sentence even if the model thinks first
 
 const cooldown = new Map(); // model -> timestamp until which it is skipped
