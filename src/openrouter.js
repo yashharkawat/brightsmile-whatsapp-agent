@@ -90,7 +90,11 @@ async function complete(body) {
 // Free models on OpenRouter rotate, and several of them emit their own reasoning as plain message content
 // ("We need to answer: ... So we should say ..."). A prospect who opens a pitch link and reads the model
 // thinking out loud does not reply. Caught in production 14 Sep 2026 - every reply is sanitised here.
-const REASONING_OPENER = /^\s*(we|i|the user|the assistant|okay|ok|alright|let'?s|first,|so,|now,|according to|based on the rules|per the rules|hmm)\b/i;
+// A receptionist legitimately opens with "We are open..." or "I can book that" - a bare we|i here threw
+// away the most natural phrasing there is and left the caller with "Sorry, could you say that again?"
+// on questions as ordinary as Sunday hours (found 14 Sep 2026 while probing a live pitch link).
+// Only openers that no receptionist would ever say stay in the list; the real detector is REASONING_TELL.
+const REASONING_OPENER = /^\s*(the user|the assistant|okay,|ok,|alright,|let'?s|first,|so,|now,|according to|based on the rules|per the rules|hmm)\b/i;
 const REASONING_TELL = /\b(we need to|we should|i should|i need to|the user (asks|says|wants)|according to (the )?rules|per the rules|the rule:|instruction says|let'?s do that|thus:|so we (should|can|could)|probably answer)\b/i;
 
 export function cleanReply(raw, system = "", userText = "") {
@@ -118,8 +122,12 @@ export function cleanReply(raw, system = "", userText = "") {
   }
   // a model that parrots a line of its own instructions is not answering the caller
   // only the INSTRUCTION half of the prompt - the SERVICES list is legitimate material for an answer
-  const rules = system ? system.split(/\nSERVICES\n|\nPRICE LIST/)[0] : "";
-  if (rules && t.length > 12 && rules.replace(/\s+/g, " ").includes(t.replace(/\s+/g, " "))) return "";
+  // The "Hours:" line is a FACT the caller is entitled to hear back verbatim, not an instruction, and the
+  // 12-char threshold made "Mon-Sun 9:00-21:00" look like parroting. 40 chars still catches a real echo.
+  const rules = system
+    ? system.split(/\nSERVICES\n|\nPRICE LIST/)[0].replace(/^Today is .*$|^Hours: .*$/gim, " ")
+    : "";
+  if (rules && t.length > 40 && rules.replace(/\s+/g, " ").includes(t.replace(/\s+/g, " "))) return "";
   // some free models echo the caller's own message straight back
   const norm = (x) => String(x).toLowerCase().replace(/[^a-z0-9 ]/g, "").replace(/\s+/g, " ").trim();
   if (userText && norm(t) === norm(userText)) return "";

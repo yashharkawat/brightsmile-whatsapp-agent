@@ -69,6 +69,10 @@ async function handleWebhook(body) {
 app.post("/api/chat", async (c) => {
   const { phone = "web-demo", name = "Web visitor", text, channel: ch, tenant = null } = await c.req.json();
   if (!text?.trim()) return c.json({ error: "text required" }, 400);
+  // A slug that is not in tenants.json used to fall through to the BrightSmile DENTAL prompt, so a
+  // mistyped or un-deployed slug would tell a vet clinic's owner that they are a dental practice.
+  // Fail loudly instead - a 404 is a bug we can see, a wrong-industry answer is one we cannot (14 Sep 2026).
+  if (tenant && !getTenant(tenant)) return c.json({ error: "unknown tenant" }, 404);
   const channel = ch === "voice" ? "voice" : "web";
   await logMessage({ direction: "in", phone, name, text, channel });
   // a prospect opening a pitch link must never see "Internal Server Error" because every free model
