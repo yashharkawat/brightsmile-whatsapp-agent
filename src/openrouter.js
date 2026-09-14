@@ -13,7 +13,7 @@ const LIST_TTL_MS = 60 * 60_000;
 // which is what made voice and chat feel slow. Fail fast and rotate instead.
 const REQUEST_TIMEOUT_MS = Number(process.env.OPENROUTER_TIMEOUT_MS || 8000);
 const MAX_MODELS_PER_CALL = 4; // worst case ~32 s instead of ~8 models x unbounded
-const MAX_TOKENS = Number(process.env.OPENROUTER_MAX_TOKENS || 220); // a receptionist answers in a sentence or two
+const MAX_TOKENS = Number(process.env.OPENROUTER_MAX_TOKENS || 400); // room for a clean sentence even if the model thinks first
 
 const cooldown = new Map(); // model -> timestamp until which it is skipped
 let cachedList = { at: 0, models: [] };
@@ -85,15 +85,59 @@ async function complete(body) {
   throw new Error("openrouter: all free models failed; last: " + last);
 }
 
+
+// Free models on OpenRouter rotate, and several of them emit their own reasoning as plain message content
+// ("We need to answer: ... So we should say ..."). A prospect who opens a pitch link and reads the model
+// thinking out loud does not reply. Caught in production 14 Sep 2026 - every reply is sanitised here.
+const REASONING_OPENER = /^\s*(we|i|the user|the assistant|okay|ok|alright|let'?s|first,|so,|now,|according to|based on the rules|per the rules|hmm)\b/i;
+const REASONING_TELL = /\b(we need to|we should|i should|i need to|the user (asks|says|wants)|according to (the )?rules|per the rules|the rule:|instruction says|let'?s do that|thus:|so we (should|can|could)|probably answer)\b/i;
+
+export function cleanReply(raw, system = "", userText = "") {
+  let t = String(raw || "");
+  t = t.replace(/<(think|thinking|reasoning|analysis)>[\s\S]*?<\/\1>/gi, " ");
+  t = t.replace(/<(think|thinking|reasoning|analysis)>[\s\S]*$/i, " ");   // unterminated block
+  t = t.replace(/^[\s\S]*?<\/(think|thinking|reasoning|analysis)>/i, " "); // stray closing tag
+  t = t.trim();
+  if (!t) return "";
+  // Some models label the answer. Take what comes after the last such label.
+  const label = t.match(/(?:^|\n)\s*(?:final(?: answer| response)?|answer|reply|response|output)\s*[:\-]\s*/gi);
+  if (label) {
+    const last = t.lastIndexOf(label[label.length - 1]);
+    t = t.slice(last + label[label.length - 1].length).trim();
+  }
+  if (REASONING_OPENER.test(t) || REASONING_TELL.test(t)) {
+    // the message the model decided on is almost always the last thing it put in quotes
+    const quoted = [...t.matchAll(/[""“”]([^""“”]{15,400})[""“”]/g)].map((m) => m[1].trim())
+      .filter((q) => !REASONING_TELL.test(q));
+    if (quoted.length) t = quoted[quoted.length - 1];
+    else return "";
+  }
+  // a model that parrots a line of its own instructions is not answering the caller
+  // only the INSTRUCTION half of the prompt - the SERVICES list is legitimate material for an answer
+  const rules = system ? system.split(/\nSERVICES\n|\nPRICE LIST/)[0] : "";
+  if (rules && t.length > 12 && rules.replace(/\s+/g, " ").includes(t.replace(/\s+/g, " "))) return "";
+  // some free models echo the caller's own message straight back
+  const norm = (x) => String(x).toLowerCase().replace(/[^a-z0-9 ]/g, "").replace(/\s+/g, " ").trim();
+  if (userText && norm(t) === norm(userText)) return "";
+  // never hand over a sentence the token limit cut in half
+  if (t.length > 40 && !/[.!?…]["\u2019']?\s*$/.test(t)) {
+    const cut = Math.max(t.lastIndexOf("."), t.lastIndexOf("!"), t.lastIndexOf("?"));
+    if (cut > 30) t = t.slice(0, cut + 1);
+  }
+  return t.trim();
+}
+
 /** history: OpenAI-style messages (system excluded). Returns { text, history, model }. */
 export async function openRouterReply({ system, history, ctx }) {
   let text = "", model = "";
+  const lastUser = [...history].reverse().find((m) => m.role === "user" && typeof m.content === "string")?.content || "";
   for (let turn = 0; turn < 8; turn++) {
-    const r = await complete({ messages: [{ role: "system", content: system }, ...history], tools: oaTools(), tool_choice: "auto", max_tokens: MAX_TOKENS });
+    const r = await complete({ messages: [{ role: "system", content: system }, ...history], tools: oaTools(), tool_choice: "auto", max_tokens: MAX_TOKENS, reasoning: { exclude: true } });
     model = r.model;
     const msg = r.json.choices[0].message;
     history.push({ role: "assistant", content: msg.content ?? "", tool_calls: msg.tool_calls });
-    if (msg.content?.trim()) text = msg.content.trim();
+    const clean = cleanReply(msg.content, system, lastUser);
+    if (clean) text = clean;
     if (!msg.tool_calls?.length) break;
     for (const c of msg.tool_calls) {
       let args = {};
@@ -102,6 +146,18 @@ export async function openRouterReply({ system, history, ctx }) {
       try { out = await runTool(c.function.name, args, ctx); } catch (e) { out = { error: String(e.message) }; }
       history.push({ role: "tool", tool_call_id: c.id, content: JSON.stringify(out) });
     }
+  }
+  if (!text) {
+    // the model returned nothing but its own reasoning - ask once more, plainly
+    try {
+      const r = await complete({
+        messages: [{ role: "system", content: system + "\n\nOUTPUT THE MESSAGE ONLY. No explanation, no reasoning, no quotes around it. One or two sentences." },
+                   ...history.filter((m) => m.role === "user" || m.role === "assistant").slice(-6)],
+        max_tokens: MAX_TOKENS, reasoning: { exclude: true },
+      });
+      text = cleanReply(r.json.choices[0].message?.content, system, lastUser) || "";
+      model = r.model;
+    } catch { /* fall through to the safe line */ }
   }
   return { text: text || "Sorry, could you say that again?", history, model };
 }

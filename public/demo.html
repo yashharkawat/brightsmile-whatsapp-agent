@@ -24,15 +24,15 @@
   @media(max-width:820px){body{flex-direction:column;align-items:center}}
 </style></head><body>
 <div class="phone"><div class="screen">
-  <header><div class="avatar">B</div><div><b>BrightSmile Dental</b><small id="status">online</small></div></header>
+  <header><div class="avatar" id="av">B</div><div><b id="bizname">BrightSmile Dental</b><small id="status">online</small></div></header>
   <div class="chat" id="chat"></div>
   <div class="typing" id="typing"></div>
   <form id="f"><input id="t" placeholder="Message" autocomplete="off"><button type="submit">➤</button></form>
 </div></div>
 <aside>
-  <h1>WhatsApp booking agent, live</h1>
-  <p>This is the same agent that answers the clinic's WhatsApp number. Ask a price, book, reschedule, or describe an emergency. Bookings land on the <a href="/dashboard.html" target="_blank">live dashboard</a>.</p>
-  <div class="chips">
+  <h1 id="headline">WhatsApp booking agent, live</h1>
+  <p id="blurb">This is the same agent that answers the clinic's WhatsApp number. Ask a price, book, reschedule, or describe an emergency. Bookings land on the <a href="/dashboard.html" target="_blank">live dashboard</a>.</p>
+  <div class="chips" id="chips">
     <span>Do you do whitening? How much?</span>
     <span>Can I book a cleaning on Saturday morning?</span>
     <span>Make it Sunday instead</span>
@@ -46,13 +46,38 @@
 </aside>
 <script>
 const chat=document.getElementById('chat'),typing=document.getElementById('typing'),input=document.getElementById('t');
-const phone=localStorage.getItem('demo_phone')||('web-'+Math.random().toString(36).slice(2,8));localStorage.setItem('demo_phone',phone);
+// ?t=<slug> seeds the demo with one business's own details (see src/tenant.js). No slug = the BrightSmile demo.
+const TENANT=new URLSearchParams(location.search).get('t')||null;
+const phoneKey='demo_phone'+(TENANT?'_'+TENANT:'');
+const phone=localStorage.getItem(phoneKey)||('web-'+(TENANT?TENANT.slice(0,12)+'-':'')+Math.random().toString(36).slice(2,8));localStorage.setItem(phoneKey,phone);
+let BIZ='BrightSmile Dental';
+let HELLO="Hi \u{1F44B} I'm Asha from BrightSmile Dental. How can I help?";
 function add(text,cls){const d=document.createElement('div');d.className='msg '+cls;d.textContent=text;const t=document.createElement('time');t.textContent=new Date().toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit'});d.appendChild(t);chat.appendChild(d);chat.scrollTop=chat.scrollHeight}
 async function send(text){if(!text.trim())return;add(text,'out');input.value='';typing.textContent='Asha is typing…';
-  try{const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone,name:'Web visitor',text})});const j=await r.json();add(j.reply||j.error,'in')}
+  try{const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone,name:'Web visitor',text,tenant:TENANT})});const j=await r.json();add(j.reply||j.error,'in')}
   catch(e){add('Network error: '+e.message,'in')}typing.textContent=''}
 document.getElementById('f').onsubmit=e=>{e.preventDefault();send(input.value)};
 document.querySelectorAll('.chips span').forEach(s=>s.onclick=()=>send(s.textContent));
-async function reset(e){e.preventDefault();await fetch('/api/reset',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone})});chat.innerHTML='';add('Hi 👋 I\'m Asha from BrightSmile Dental. How can I help?','in')}
-add('Hi 👋 I\'m Asha from BrightSmile Dental. How can I help?','in');
+async function reset(e){e.preventDefault();await fetch('/api/reset',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone})});chat.innerHTML='';add(HELLO,'in')}
+async function boot(){
+  if(TENANT){
+    try{
+      const r=await fetch('/api/tenant/'+encodeURIComponent(TENANT));
+      if(r.ok){
+        const t=await r.json();
+        BIZ=t.name||BIZ;
+        document.getElementById('bizname').textContent=BIZ;
+        document.getElementById('av').textContent=(BIZ[0]||'Z').toUpperCase();
+        document.title=BIZ+' - AI receptionist by Zojo';
+        document.getElementById('headline').textContent='The receptionist for '+BIZ;
+        document.getElementById('blurb').textContent='This is a working AI receptionist set up for '+BIZ+'. Ask it what you do, book a slot, or try it after hours. On your own number it answers WhatsApp and calls the same way, and passes anything unusual straight to you.';
+        HELLO='Hi \u{1F44B} I am '+(t.assistant||'Asha')+' from '+BIZ+'. How can I help?';
+        const chips=document.getElementById('chips');
+        if(t.prompts&&t.prompts.length){chips.innerHTML='';t.prompts.forEach(p=>{const el=document.createElement('span');el.textContent=p;el.onclick=()=>send(p);chips.appendChild(el)});}
+      }
+    }catch(e){}
+  }
+  add(HELLO,'in');
+}
+boot();
 </script></body></html>

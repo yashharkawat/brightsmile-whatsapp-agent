@@ -6,6 +6,7 @@ import { getHistory, saveHistory, insertBooking, cancelBooking, bookingsForPhone
 import { freeSlots, isFree, durationFor, prettyIst, todayIst } from "./slots.js";
 import { sendText } from "./whatsapp.js";
 import { openRouterReply } from "./openrouter.js";
+import { getTenant, tenantPrompt } from "./tenant.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const PROMPT_TEMPLATE = readFileSync(join(here, "..", "system_prompt.md"), "utf8");
@@ -13,7 +14,12 @@ const MODEL = process.env.MODEL || "claude-opus-5";
 const EFFORT = process.env.EFFORT || "low";
 const MAX_HISTORY = 40; // messages kept per phone
 
-function systemPrompt(channel = "whatsapp") {
+function systemPrompt(channel = "whatsapp", tenant = null) {
+  if (tenant) return tenantPrompt(tenant, channel) +
+    `\n\nTOOLS\n- get_free_slots(date, treatment, part?) before offering any time. Dates are YYYY-MM-DD in IST; today is ${todayIst()}.` +
+    `\n- book_appointment(patient, treatment, start) with the exact ISO start returned by get_free_slots.` +
+    `\n- reschedule_appointment(new_start) moves an existing booking.` +
+    `\n- escalate_to_human(summary) for emergencies or when the caller asks for a person.`;
   const voiceHint = channel === "voice"
     ? "\n\nVOICE CALL MODE: you are speaking on a phone call. Reply in one or two short spoken sentences, no lists, no emojis, no markdown. Say times like 'nine thirty in the morning'. Confirm before booking."
     : "";
@@ -120,8 +126,9 @@ export async function runTool(name, input, ctx) {
 const client = process.env.ANTHROPIC_API_KEY ? new Anthropic() : null;
 
 /** Handle one inbound message; returns the reply text. */
-export async function reply({ phone, name, text, channel = "whatsapp" }) {
-  const ctx = { phone, name, channel };
+export async function reply({ phone, name, text, channel = "whatsapp", tenant: slug = null }) {
+  const tenant = getTenant(slug);
+  const ctx = { phone, name, channel, tenant };
   const history = await getHistory(phone);
   history.push({ role: "user", content: text });
 
@@ -129,7 +136,7 @@ export async function reply({ phone, name, text, channel = "whatsapp" }) {
     // OpenAI-style history is stored under a separate key so the two formats never mix
     const orHistory = await getHistory(phone + "#or");
     orHistory.push({ role: "user", content: text });
-    const { text: answer } = await openRouterReply({ system: systemPrompt(channel), history: orHistory, ctx });
+    const { text: answer } = await openRouterReply({ system: systemPrompt(channel, tenant), history: orHistory, ctx });
     while (orHistory.length > MAX_HISTORY) { orHistory.shift(); while (orHistory.length && orHistory[0].role !== "user") orHistory.shift(); }
     await saveHistory(phone + "#or", name, orHistory);
     return answer;
@@ -141,14 +148,14 @@ export async function reply({ phone, name, text, channel = "whatsapp" }) {
     const res = await client.messages.create({
       model: MODEL,
       max_tokens: 1024,
-      system: [{ type: "text", text: systemPrompt(channel), cache_control: { type: "ephemeral" } }],
+      system: [{ type: "text", text: systemPrompt(channel, tenant), cache_control: { type: "ephemeral" } }],
       tools,
       messages: history,
       output_config: { effort: EFFORT },
     });
     if (res.stop_reason === "refusal") {
       history.pop();
-      return await finish("Sorry, I can't help with that one. Our receptionist can - call +91 80 4000 1234.", phone, name, history);
+      return await finish(tenant ? "Sorry, I can't help with that one - someone from the team will call you back." : "Sorry, I can't help with that one. Our receptionist can - call +91 80 4000 1234.", phone, name, history);
     }
     history.push({ role: "assistant", content: res.content });
     for (const b of res.content) if (b.type === "text" && b.text.trim()) textOut.push(b.text.trim());

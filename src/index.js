@@ -4,6 +4,7 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 import { waitUntil } from "@vercel/functions";
 import { logMessage, seenWaId, dashboardState, resetConversation, dbStatus } from "./db.js";
 import { reply } from "./agent.js";
+import { getTenant } from "./tenant.js";
 import { sendText, markReadTyping } from "./whatsapp.js";
 import { twilio } from "./twilio.js";
 
@@ -66,11 +67,19 @@ async function handleWebhook(body) {
 
 // --- Web simulator (same agent, channel=web, no WhatsApp sends) ---
 app.post("/api/chat", async (c) => {
-  const { phone = "web-demo", name = "Web visitor", text, channel: ch } = await c.req.json();
+  const { phone = "web-demo", name = "Web visitor", text, channel: ch, tenant = null } = await c.req.json();
   if (!text?.trim()) return c.json({ error: "text required" }, 400);
   const channel = ch === "voice" ? "voice" : "web";
   await logMessage({ direction: "in", phone, name, text, channel });
-  const answer = await reply({ phone, name, text, channel });
+  // a prospect opening a pitch link must never see "Internal Server Error" because every free model
+  // was rate-limited at that moment (14 Sep 2026)
+  let answer;
+  try {
+    answer = await reply({ phone, name, text, channel, tenant });
+  } catch (e) {
+    console.error("[chat] reply failed:", e.message);
+    answer = "Sorry, I'm having trouble right now. Please try again in a moment.";
+  }
   await logMessage({ direction: "out", phone, name, text: answer, channel });
   return c.json({ reply: answer });
 });
@@ -89,6 +98,14 @@ app.get("/", (c) => c.redirect("/demo.html"));
 app.get("/demo", (c) => c.redirect("/demo.html"));
 app.get("/dashboard", (c) => c.redirect("/dashboard.html"));
 app.get("/voice", (c) => c.redirect("/voice.html"));
+// Per-tenant receptionist demo: /r/<slug> is the link that goes in a pitch.
+// Public tenant card for the demo page (name + suggested prompts only, never the whole config).
+app.get("/api/tenant/:slug", (c) => {
+  const t = getTenant(c.req.param("slug"));
+  if (!t) return c.json({ error: "unknown tenant" }, 404);
+  return c.json({ name: t.name, assistant: t.assistant || "Asha", category: t.category, area: t.area, prompts: t.prompts || [] });
+});
+app.get("/r/:slug", (c) => c.redirect(`/demo.html?via=zojo&t=${encodeURIComponent(c.req.param("slug"))}`));
 
 export default app;
 

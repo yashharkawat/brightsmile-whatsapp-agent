@@ -1,0 +1,1052 @@
+{
+ "r1physio-your-home": {
+  "name": "R1physio@your home",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Koramangala",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "phusike-physiotherapy-clinic": {
+  "name": "Phusike Physiotherapy Clinic",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Koramangala",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "dr-banarji-shoulder-center-best-orthop": {
+  "name": "Dr Banarji Shoulder Center- Best Orthopedic and Physiotherapy Clinic i",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Koramangala",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "praan-health-clinic": {
+  "name": "Praan Health Clinic",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Koramangala",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "dr-subodh-m-shetty-spine-surgeon-joint": {
+  "name": "Dr. Subodh M. Shetty-Spine Surgeon,Joint repacement Surgeon & Sports M",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Koramangala",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "arc-spine-joint-care-the-stance": {
+  "name": "Arc Spine & Joint care (The Stance)",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Koramangala",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "pharmezy-krafted-for-health": {
+  "name": "PharmEzy krafted for health",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Koramangala",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "v-care-pet-polyclinic": {
+  "name": "V-Care Pet PolyClinic",
+  "assistant": "Asha",
+  "category": "veterinary",
+  "area": "Koramangala",
+  "hours": "Mon-Sun 9:00-21:00",
+  "services": [
+   "Consultation and vaccination",
+   "Deworming and grooming",
+   "Surgery and dental",
+   "Diagnostics and lab",
+   "Emergency care"
+  ],
+  "prompts": [
+   "My dog has been vomiting since morning",
+   "Are you open right now?",
+   "Can I bring my cat in this evening?",
+   "Do you do vaccinations?",
+   "Do you take emergencies at night?"
+  ]
+ },
+ "cartman-animal-hospital": {
+  "name": "Cartman Animal Hospital",
+  "assistant": "Asha",
+  "category": "veterinary",
+  "area": "Koramangala",
+  "hours": "Mon-Sun 9:00-21:00",
+  "services": [
+   "Consultation and vaccination",
+   "Deworming and grooming",
+   "Surgery and dental",
+   "Diagnostics and lab",
+   "Emergency care"
+  ],
+  "prompts": [
+   "My dog has been vomiting since morning",
+   "Are you open right now?",
+   "Can I bring my cat in this evening?",
+   "Do you do vaccinations?",
+   "Do you take emergencies at night?"
+  ]
+ },
+ "healthy-pawz-pets-veterinary-hospital-": {
+  "name": "Healthy Pawz Pets Veterinary Hospital 24/7",
+  "assistant": "Asha",
+  "category": "veterinary",
+  "area": "Koramangala",
+  "hours": "Mon-Sun 9:00-21:00",
+  "services": [
+   "Consultation and vaccination",
+   "Deworming and grooming",
+   "Surgery and dental",
+   "Diagnostics and lab",
+   "Emergency care"
+  ],
+  "prompts": [
+   "My dog has been vomiting since morning",
+   "Are you open right now?",
+   "Can I bring my cat in this evening?",
+   "Do you do vaccinations?",
+   "Do you take emergencies at night?"
+  ]
+ },
+ "leela-pet-clinic-hsr-layout": {
+  "name": "Leela pet clinic(hsr layout)",
+  "assistant": "Asha",
+  "category": "veterinary",
+  "area": "Koramangala",
+  "hours": "Mon-Sun 9:00-21:00",
+  "services": [
+   "Consultation and vaccination",
+   "Deworming and grooming",
+   "Surgery and dental",
+   "Diagnostics and lab",
+   "Emergency care"
+  ],
+  "prompts": [
+   "My dog has been vomiting since morning",
+   "Are you open right now?",
+   "Can I bring my cat in this evening?",
+   "Do you do vaccinations?",
+   "Do you take emergencies at night?"
+  ]
+ },
+ "papas-lifeline-pet-clinic-veterinary-h": {
+  "name": "Papas Lifeline Pet Clinic & Veterinary Hospital – 24x7 Care Jayanagar",
+  "assistant": "Asha",
+  "category": "veterinary",
+  "area": "Koramangala",
+  "hours": "Mon-Sun 9:00-21:00",
+  "services": [
+   "Consultation and vaccination",
+   "Deworming and grooming",
+   "Surgery and dental",
+   "Diagnostics and lab",
+   "Emergency care"
+  ],
+  "prompts": [
+   "My dog has been vomiting since morning",
+   "Are you open right now?",
+   "Can I bring my cat in this evening?",
+   "Do you do vaccinations?",
+   "Do you take emergencies at night?"
+  ]
+ },
+ "indira-pet-clinic-24-7": {
+  "name": "Indira Pet Clinic 24/7",
+  "assistant": "Asha",
+  "category": "veterinary",
+  "area": "Koramangala",
+  "hours": "Mon-Sun 9:00-21:00",
+  "services": [
+   "Consultation and vaccination",
+   "Deworming and grooming",
+   "Surgery and dental",
+   "Diagnostics and lab",
+   "Emergency care"
+  ],
+  "prompts": [
+   "My dog has been vomiting since morning",
+   "Are you open right now?",
+   "Can I bring my cat in this evening?",
+   "Do you do vaccinations?",
+   "Do you take emergencies at night?"
+  ]
+ },
+ "justdogs-koramangala-bengaluru-pet-sto": {
+  "name": "JUSTDOGS   Koramangala, Bengaluru - Pet Store & Spa",
+  "assistant": "Asha",
+  "category": "veterinary",
+  "area": "Koramangala",
+  "hours": "Mon-Sun 9:00-21:00",
+  "services": [
+   "Consultation and vaccination",
+   "Deworming and grooming",
+   "Surgery and dental",
+   "Diagnostics and lab",
+   "Emergency care"
+  ],
+  "prompts": [
+   "My dog has been vomiting since morning",
+   "Are you open right now?",
+   "Can I bring my cat in this evening?",
+   "Do you do vaccinations?",
+   "Do you take emergencies at night?"
+  ]
+ },
+ "glenands-pet-stores-koramangla": {
+  "name": "Glenands Pet Stores@koramangla",
+  "assistant": "Asha",
+  "category": "veterinary",
+  "area": "Koramangala",
+  "hours": "Mon-Sun 9:00-21:00",
+  "services": [
+   "Consultation and vaccination",
+   "Deworming and grooming",
+   "Surgery and dental",
+   "Diagnostics and lab",
+   "Emergency care"
+  ],
+  "prompts": [
+   "My dog has been vomiting since morning",
+   "Are you open right now?",
+   "Can I bring my cat in this evening?",
+   "Do you do vaccinations?",
+   "Do you take emergencies at night?"
+  ]
+ },
+ "pets-first-hospital-jayanagar-24-7-pet": {
+  "name": "Pets First Hospital Jayanagar - 24/7 Pet Clinic ( Veterinarian, Surger",
+  "assistant": "Asha",
+  "category": "veterinary",
+  "area": "Jayanagar",
+  "hours": "Mon-Sun 9:00-21:00",
+  "services": [
+   "Consultation and vaccination",
+   "Deworming and grooming",
+   "Surgery and dental",
+   "Diagnostics and lab",
+   "Emergency care"
+  ],
+  "prompts": [
+   "My dog has been vomiting since morning",
+   "Are you open right now?",
+   "Can I bring my cat in this evening?",
+   "Do you do vaccinations?",
+   "Do you take emergencies at night?"
+  ]
+ },
+ "jeeva-pet-hospital": {
+  "name": "Jeeva Pet Hospital",
+  "assistant": "Asha",
+  "category": "veterinary",
+  "area": "Jayanagar",
+  "hours": "Mon-Sun 9:00-21:00",
+  "services": [
+   "Consultation and vaccination",
+   "Deworming and grooming",
+   "Surgery and dental",
+   "Diagnostics and lab",
+   "Emergency care"
+  ],
+  "prompts": [
+   "My dog has been vomiting since morning",
+   "Are you open right now?",
+   "Can I bring my cat in this evening?",
+   "Do you do vaccinations?",
+   "Do you take emergencies at night?"
+  ]
+ },
+ "vijaya-diagnostic-centre-hsr-layout-be": {
+  "name": "Vijaya Diagnostic Centre HSR layout - Bengaluru - Pathology & Radiolog",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "HSR Layout",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "ebisu-diagnostic-center": {
+  "name": "Ebisu Diagnostic Center",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "HSR Layout",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "wellnxt-diagnostics-in-hsr-layout-beng": {
+  "name": "Wellnxt Diagnostics in HSR Layout, Bengaluru   Full body Health Checku",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "HSR Layout",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "nitara-scans-diagnostics-centre": {
+  "name": "Nitara Scans & Diagnostics Centre",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "HSR Layout",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "gokul-diagnostics": {
+  "name": "Gokul Diagnostics",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "HSR Layout",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "health-nest-hospital": {
+  "name": "Health Nest Hospital",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "HSR Layout",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "aarthi-scans-lab-marathahalli-diagnost": {
+  "name": "AARTHI SCANS & LAB   MARATHAHALLI   DIAGNOSTIC CENTRE",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "Marathahalli",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "tenet-diagnostics-center-marathahalli": {
+  "name": "Tenet Diagnostics Center- Marathahalli",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "Marathahalli",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "rjh-clinic-pharma-and-diagnostic-lab-s": {
+  "name": "RJH Clinic Pharma and Diagnostic Lab - Shanthiniketana Layout, Munneko",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "Marathahalli",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "d7-med-multispeciality-clinic": {
+  "name": "D7 Med Multispeciality Clinic",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "Marathahalli",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "nethradhama-super-speciality-eye-hospi": {
+  "name": "Nethradhama Super Speciality Eye Hospital, Jayanagar (Centre Of Excell",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "prabha-eye-clinic-and-research-centre": {
+  "name": "Prabha Eye Clinic and Research Centre",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "saradev-eye-hospital-cataract-glaucoma": {
+  "name": "Saradev Eye Hospital – Cataract, Glaucoma & Cornea Care in Jayanagar B",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "kiran-eye-hospital-best-eye-hospital-i": {
+  "name": "Kiran Eye Hospital   Best Eye Hospital in JP Nagar   Best Eye Doctor i",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "prism-eye-care-jayanagar": {
+  "name": "Prism Eye Care - Jayanagar",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "sri-krishna-nethralaya": {
+  "name": "Sri Krishna Nethralaya",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "eyephoria-opticals-eye-clinic-zeiss-es": {
+  "name": "EYEPHORIA Opticals & Eye Clinic, ZEISS ESSILOR PARTNER",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "titan-eye-flagship-store-at-jayanagar-": {
+  "name": "Titan Eye+ Flagship store at Jayanagar, Bengaluru (Buy 1 Get 1 Free)",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "zeiss-vision-center-i-jayanagar-i-eyes": {
+  "name": "ZEISS VISION CENTER I JAYANAGAR I EYESENSE I EYE TESTING",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "specsmakers-at-jayanagar-bengaluru-buy": {
+  "name": "Specsmakers at Jayanagar, Bengaluru (Buy 1 Get 1 FREE on all Eyeglasse",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "ramakrishna-hospital-best-hospital-in-": {
+  "name": "Ramakrishna Hospital - Best Hospital in Jayanagar, Bangalore   Super S",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "lawrence-mayo-jayanagar": {
+  "name": "Lawrence & Mayo, Jayanagar",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "lenskart-com-at-marenhalli-road-100ft-": {
+  "name": "Lenskart.com at Marenhalli Road, 100ft Ring Road, Jayanagar, Bengaluru",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "lenskart-com-at-4th-block-jayanagar-be": {
+  "name": "Lenskart.com at 4th Block, Jayanagar, Bengaluru (First Lens Replacemen",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "gkb-optical-store-in-jayanagar-bengalu": {
+  "name": "GKB - Optical Store in Jayanagar, Bengaluru",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "united-hospital-best-surgical-hospital": {
+  "name": "United Hospital - Best Surgical Hospital & Family Care Clinic",
+  "assistant": "Asha",
+  "category": "eye",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 10:00-19:00, Sun 10:00-14:00",
+  "services": [
+   "Eye check-up and power testing",
+   "Cataract consultation",
+   "Spectacles and contact lenses",
+   "Retina and glaucoma checks",
+   "Child eye care"
+  ],
+  "prompts": [
+   "I need a new power check, when can I come?",
+   "Do you do cataract surgery?",
+   "Can I book on Saturday evening?",
+   "My eye is red and painful",
+   "Are you open now?"
+  ]
+ },
+ "shathayu-ayurveda-clinic-indiranagar": {
+  "name": "Shathayu Ayurveda Clinic Indiranagar",
+  "assistant": "Asha",
+  "category": "ayurveda",
+  "area": "Indiranagar",
+  "hours": "Mon-Sat 9:00-19:00, Sun closed",
+  "services": [
+   "Consultation",
+   "Panchakarma",
+   "Joint and back pain",
+   "Skin and hair treatment",
+   "Digestive health"
+  ],
+  "prompts": [
+   "Do you treat back pain?",
+   "How long is a panchakarma course?",
+   "Can I book a consultation this week?",
+   "Do you do home therapy?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "arth-ayurveda-world-indiranagar": {
+  "name": "Arth Ayurveda World- Indiranagar",
+  "assistant": "Asha",
+  "category": "ayurveda",
+  "area": "Indiranagar",
+  "hours": "Mon-Sat 9:00-19:00, Sun closed",
+  "services": [
+   "Consultation",
+   "Panchakarma",
+   "Joint and back pain",
+   "Skin and hair treatment",
+   "Digestive health"
+  ],
+  "prompts": [
+   "Do you treat back pain?",
+   "How long is a panchakarma course?",
+   "Can I book a consultation this week?",
+   "Do you do home therapy?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "keva-ayurveda-indiranagar-branch": {
+  "name": "Keva Ayurveda Indiranagar Branch",
+  "assistant": "Asha",
+  "category": "ayurveda",
+  "area": "Indiranagar",
+  "hours": "Mon-Sat 9:00-19:00, Sun closed",
+  "services": [
+   "Consultation",
+   "Panchakarma",
+   "Joint and back pain",
+   "Skin and hair treatment",
+   "Digestive health"
+  ],
+  "prompts": [
+   "Do you treat back pain?",
+   "How long is a panchakarma course?",
+   "Can I book a consultation this week?",
+   "Do you do home therapy?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "ayushman-ayurveda-clinic-in-brookefiel": {
+  "name": "Ayushman Ayurveda Clinic in Brookefield",
+  "assistant": "Asha",
+  "category": "ayurveda",
+  "area": "Indiranagar",
+  "hours": "Mon-Sat 9:00-19:00, Sun closed",
+  "services": [
+   "Consultation",
+   "Panchakarma",
+   "Joint and back pain",
+   "Skin and hair treatment",
+   "Digestive health"
+  ],
+  "prompts": [
+   "Do you treat back pain?",
+   "How long is a panchakarma course?",
+   "Can I book a consultation this week?",
+   "Do you do home therapy?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "travancore-ayurveda-ayur-care-c-v-rama": {
+  "name": "Travancore Ayurveda (Ayur Care) C.V.Raman Nagar   Best Ayurvedic Panch",
+  "assistant": "Asha",
+  "category": "ayurveda",
+  "area": "Indiranagar",
+  "hours": "Mon-Sat 9:00-19:00, Sun closed",
+  "services": [
+   "Consultation",
+   "Panchakarma",
+   "Joint and back pain",
+   "Skin and hair treatment",
+   "Digestive health"
+  ],
+  "prompts": [
+   "Do you treat back pain?",
+   "How long is a panchakarma course?",
+   "Can I book a consultation this week?",
+   "Do you do home therapy?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "royale-ayur-clinic-sexual-health-clini": {
+  "name": "Royale Ayur Clinic - Sexual Health Clinic - Sexologist",
+  "assistant": "Asha",
+  "category": "ayurveda",
+  "area": "Indiranagar",
+  "hours": "Mon-Sat 9:00-19:00, Sun closed",
+  "services": [
+   "Consultation",
+   "Panchakarma",
+   "Joint and back pain",
+   "Skin and hair treatment",
+   "Digestive health"
+  ],
+  "prompts": [
+   "Do you treat back pain?",
+   "How long is a panchakarma course?",
+   "Can I book a consultation this week?",
+   "Do you do home therapy?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "almaa-siddha-care-clinic": {
+  "name": "Almaa Siddha Care clinic",
+  "assistant": "Asha",
+  "category": "ayurveda",
+  "area": "Indiranagar",
+  "hours": "Mon-Sat 9:00-19:00, Sun closed",
+  "services": [
+   "Consultation",
+   "Panchakarma",
+   "Joint and back pain",
+   "Skin and hair treatment",
+   "Digestive health"
+  ],
+  "prompts": [
+   "Do you treat back pain?",
+   "How long is a panchakarma course?",
+   "Can I book a consultation this week?",
+   "Do you do home therapy?",
+   "Are you open on Sunday?"
+  ]
+ }
+}
