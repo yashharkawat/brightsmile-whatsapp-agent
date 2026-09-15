@@ -1552,5 +1552,530 @@
    "My tooth is bleeding badly",
    "Are you open now?"
   ]
+ },
+ "digital-kora": {
+  "name": "Digital Kora",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Marathahalli",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "nextwebi-it-solutions-pvt-ltd": {
+  "name": "Nextwebi IT Solutions Pvt. Ltd.",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "mindgee-technologies-private-limited-d": {
+  "name": "MindGee Technologies Private Limited   Digital Marketing Agency in Ban",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Marathahalli",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "seodigitz": {
+  "name": "SEODigitz",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "digital-corsel": {
+  "name": "Digital Corsel",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Marathahalli",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "digiency-web-design-development-servic": {
+  "name": "Digiency   Web Design & Development Services",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "digigo-plus-healthcare-digital-marketi": {
+  "name": "DigiGo Plus   Healthcare Digital Marketing Company in Bangalore",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Marathahalli",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "goodworklabs": {
+  "name": "GoodWorkLabs",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "rds-digital": {
+  "name": "RDS Digital",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Marathahalli",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "ar-design-technology": {
+  "name": "AR Design & Technology",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "digimark-agency": {
+  "name": "Digimark Agency",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Marathahalli",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "cloud-software-solution-website-mobile": {
+  "name": "Cloud Software Solution - Website & Mobile App Development Company In",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "digion-solutions-digital-marketing-ai-": {
+  "name": "DigiOn Solutions - Digital Marketing & AI Automation",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Marathahalli",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "nextbrain-bangalore-ai-web-and-mobile-": {
+  "name": "Nextbrain Bangalore: AI, Web and Mobile apps development Company",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "webenza-digital-marketing-agency-in-ba": {
+  "name": "Webenza – Digital Marketing Agency in Bangalore",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Marathahalli",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "brandquake-digital-marketing-company-i": {
+  "name": "Brandquake   Digital Marketing Company in Bangalore   Karnataka",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "c": {
+  "name": "𝗗𝗶𝗴𝗶𝘁𝗮𝗹𝗶𝗻𝗱𝗶𝗮𝗮𝗱𝗱, 𝗗𝗶𝗴𝗶𝘁𝗮𝗹 𝗠𝗮𝗿𝗸𝗲𝘁𝗶𝗻𝗴 𝗔𝗴𝗲𝗻c𝘆 𝗶𝗻 𝗕𝗮𝗻𝗴𝗮𝗜𝗼𝗿𝗲",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Marathahalli",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "ralecon-digital-marketing-seo-ppc-comp": {
+  "name": "Ralecon (Digital Marketing, SEO, PPC Company in Bangalore, India)",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "im-solutions": {
+  "name": "IM Solutions",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Marathahalli",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "bodhi-design-studio": {
+  "name": "Bodhi Design Studio",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "getitsms-bulk-whatsapp-message-sender": {
+  "name": "GetItSMS (Bulk WhatsApp Message Sender)",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Marathahalli",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "treehack": {
+  "name": "Treehack",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "krn-digi-tech": {
+  "name": "KRN DIGI-TECH",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Marathahalli",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "digital-infinizy": {
+  "name": "Digital Infinizy",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
+ },
+ "creative-nexus-bengaluru-i-digital-mar": {
+  "name": "Creative Nexus - Bengaluru I Digital Marketing Agency",
+  "assistant": "Asha",
+  "category": "agency",
+  "area": "Marathahalli",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "services": [
+   "Website design and development",
+   "SEO and Google Business Profile",
+   "Social media and paid ads",
+   "Branding and creative",
+   "Ecommerce and Shopify builds"
+  ],
+  "prompts": [
+   "Do you build Shopify stores?",
+   "What do you charge for a 5 page website?",
+   "How long does a website take?",
+   "Can we get on a call this week?",
+   "Do you handle SEO as well?"
+  ]
  }
 }
