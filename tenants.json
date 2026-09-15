@@ -1447,5 +1447,110 @@
    "How many sessions will I need?",
    "Are you open now?"
   ]
+ },
+ "excel-dental-care": {
+  "name": "Excel Dental Care",
+  "assistant": "Asha",
+  "category": "dental",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "services": [
+   "Check-ups and cleaning",
+   "Root canal treatment",
+   "Braces and aligners",
+   "Implants and crowns",
+   "Kids dentistry"
+  ],
+  "prompts": [
+   "Do you do root canals?",
+   "Can I book a cleaning on Saturday morning?",
+   "Make it Sunday instead",
+   "My tooth is bleeding badly",
+   "Are you open now?"
+  ]
+ },
+ "little-pearls-dental-clinic": {
+  "name": "LITTLE PEARLS Dental Clinic",
+  "assistant": "Asha",
+  "category": "dental",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "services": [
+   "Check-ups and cleaning",
+   "Root canal treatment",
+   "Braces and aligners",
+   "Implants and crowns",
+   "Kids dentistry"
+  ],
+  "prompts": [
+   "Do you do root canals?",
+   "Can I book a cleaning on Saturday morning?",
+   "Make it Sunday instead",
+   "My tooth is bleeding badly",
+   "Are you open now?"
+  ]
+ },
+ "lalitha-dental-speciality-centre-jayan": {
+  "name": "Lalitha Dental Speciality Centre Jayanagar",
+  "assistant": "Asha",
+  "category": "dental",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "services": [
+   "Check-ups and cleaning",
+   "Root canal treatment",
+   "Braces and aligners",
+   "Implants and crowns",
+   "Kids dentistry"
+  ],
+  "prompts": [
+   "Do you do root canals?",
+   "Can I book a cleaning on Saturday morning?",
+   "Make it Sunday instead",
+   "My tooth is bleeding badly",
+   "Are you open now?"
+  ]
+ },
+ "manya-dental-clinics-jayanagar": {
+  "name": "Manya Dental Clinics   Jayanagar",
+  "assistant": "Asha",
+  "category": "dental",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "services": [
+   "Check-ups and cleaning",
+   "Root canal treatment",
+   "Braces and aligners",
+   "Implants and crowns",
+   "Kids dentistry"
+  ],
+  "prompts": [
+   "Do you do root canals?",
+   "Can I book a cleaning on Saturday morning?",
+   "Make it Sunday instead",
+   "My tooth is bleeding badly",
+   "Are you open now?"
+  ]
+ },
+ "smitha-dental-implants-aesthetics-best": {
+  "name": "Smitha Dental, Implants & Aesthetics   Best Dentist in Jayanagar Banga",
+  "assistant": "Asha",
+  "category": "dental",
+  "area": "Jayanagar",
+  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "services": [
+   "Check-ups and cleaning",
+   "Root canal treatment",
+   "Braces and aligners",
+   "Implants and crowns",
+   "Kids dentistry"
+  ],
+  "prompts": [
+   "Do you do root canals?",
+   "Can I book a cleaning on Saturday morning?",
+   "Make it Sunday instead",
+   "My tooth is bleeding badly",
+   "Are you open now?"
+  ]
  }
 }
