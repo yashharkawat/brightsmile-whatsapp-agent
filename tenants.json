@@ -2077,5 +2077,110 @@
    "Can we get on a call this week?",
    "Do you handle SEO as well?"
   ]
+ },
+ "house-of-smiles-dental-implant-center": {
+  "name": "House Of Smiles Dental & Implant Center",
+  "assistant": "Asha",
+  "category": "dental",
+  "area": "Indiranagar",
+  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "services": [
+   "Check-ups and cleaning",
+   "Root canal treatment",
+   "Braces and aligners",
+   "Implants and crowns",
+   "Kids dentistry"
+  ],
+  "prompts": [
+   "Do you do root canals?",
+   "Can I book a cleaning on Saturday morning?",
+   "Make it Sunday instead",
+   "My tooth is bleeding badly",
+   "Are you open now?"
+  ]
+ },
+ "renuka-cure-and-smile-dental-clinic": {
+  "name": "Renuka Cure and Smile Dental Clinic",
+  "assistant": "Asha",
+  "category": "dental",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "services": [
+   "Check-ups and cleaning",
+   "Root canal treatment",
+   "Braces and aligners",
+   "Implants and crowns",
+   "Kids dentistry"
+  ],
+  "prompts": [
+   "Do you do root canals?",
+   "Can I book a cleaning on Saturday morning?",
+   "Make it Sunday instead",
+   "My tooth is bleeding badly",
+   "Are you open now?"
+  ]
+ },
+ "oncquest-laboratories-ltd": {
+  "name": "Oncquest Laboratories Ltd",
+  "assistant": "Asha",
+  "category": "diagnostics",
+  "area": "Jayanagar",
+  "hours": "Mon-Sun 7:00-21:00",
+  "services": [
+   "Blood tests and full body checks",
+   "Ultrasound and X-ray",
+   "ECG and 2D echo",
+   "Home sample collection",
+   "Report delivery"
+  ],
+  "prompts": [
+   "Do I need to fast for a lipid profile?",
+   "Can someone collect a sample at home?",
+   "When will my report come?",
+   "Do you do ultrasound?",
+   "Are you open on Sunday?"
+  ]
+ },
+ "omniphysiocare-physiotherapy-clinic-br": {
+  "name": "Omniphysiocare Physiotherapy Clinic   Brookfield",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "praanaa-pain-clinic-in-bangalore": {
+  "name": "Praanaa Pain Clinic in Bangalore",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
  }
 }
