@@ -104,6 +104,12 @@ export function cleanReply(raw, system = "", userText = "") {
   t = t.replace(/^[\s\S]*?<\/(think|thinking|reasoning|analysis)>/i, " "); // stray closing tag
   // some free models emit their tool-call syntax as plain text instead of a tool_calls field
   t = t.replace(/<\|[a-z_]*tool_call[a-z_]*\|>/gi, " ").replace(/<\|[a-z_]+\|>/g, " ");
+  // Some emit it as pseudo-XML instead: <function=escalate_to_human><parameter=summary>...
+  // Whatever is left once those tags come off is the ARGUMENT ("Patient reports heavy tooth
+  // bleeding."), a case note about the caller, not a message to them - so drop the whole
+  // thing rather than stripping the tags and sending the residue. A dental demo answered a
+  // probe with exactly that on 16 Sep 2026. openRouterReply re-asks plainly when we return "".
+  if (/<\/?(function|tool_call|parameter|arg)\s*=[^>]*>/i.test(t)) return "";
   if (/^\s*\[?\s*(get_free_slots|book_appointment|reschedule_appointment|escalate_to_human)\s*\(/i.test(t)) return "";
   t = t.trim();
   if (!t) return "";

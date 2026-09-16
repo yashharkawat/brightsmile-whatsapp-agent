@@ -22,6 +22,11 @@ test("drops the persona line echoed back without its quotes", () => {
   assert.equal(cleanReply(echo, SYSTEM, "do you need me to fast before the test"), "");
 });
 
+test("drops pseudo-XML tool-call syntax emitted as plain text", () => {
+  const leak = "<function=escalate_to_human>\n<parameter=summary>\nPatient reports heavy tooth bleeding.";
+  assert.equal(cleanReply(leak, SYSTEM, "my tooth is bleeding a lot"), "");
+});
+
 // The guards above must not eat ordinary receptionist phrasing - that regression cost a
 // whole batch on 14 Sep 2026 ("Sorry, could you say that again?" on Sunday hours).
 for (const good of [
