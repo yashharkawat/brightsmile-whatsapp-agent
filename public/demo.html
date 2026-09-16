@@ -47,7 +47,12 @@
 <script>
 const chat=document.getElementById('chat'),typing=document.getElementById('typing'),input=document.getElementById('t');
 // ?t=<slug> seeds the demo with one business's own details (see src/tenant.js). No slug = the BrightSmile demo.
-const TENANT=new URLSearchParams(location.search).get('t')||null;
+// The slug is read from the PATH as well, because /r/<slug> is what goes in every pitch email and in
+// production Vercel serves this file for that path directly - the app's redirect that adds ?t= never
+// runs, so location.search was empty and every prospect saw the generic BrightSmile DENTAL demo instead
+// of their own clinic. That was true of every link sent up to 16 Sep 2026. Path first, query as fallback.
+const PATH_SLUG=(location.pathname.match(/^\/r\/([^/?#]+)/)||[])[1];
+const TENANT=(PATH_SLUG?decodeURIComponent(PATH_SLUG):null)||new URLSearchParams(location.search).get('t')||null;
 const phoneKey='demo_phone'+(TENANT?'_'+TENANT:'');
 const phone=localStorage.getItem(phoneKey)||('web-'+(TENANT?TENANT.slice(0,12)+'-':'')+Math.random().toString(36).slice(2,8));localStorage.setItem(phoneKey,phone);
 let BIZ='BrightSmile Dental';
