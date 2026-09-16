@@ -109,7 +109,20 @@ app.get("/api/tenant/:slug", (c) => {
   if (!t) return c.json({ error: "unknown tenant" }, 404);
   return c.json({ name: t.name, assistant: t.assistant || "Asha", category: t.category, area: t.area, prompts: t.prompts || [] });
 });
-app.get("/r/:slug", (c) => c.redirect(`/demo.html?via=zojo&t=${encodeURIComponent(c.req.param("slug"))}`));
+// Every pitch link opened is logged, because without it a silent batch is unattributable:
+// a prospect who never opened the mail, one who opened it and did not click, and one who
+// clicked and disliked the demo all look identical (zero replies). Measured 16 Sep 2026 -
+// 200 cold emails had produced exactly ONE real demo conversation, and the review had been
+// reading that as an offer problem. Fire-and-forget so a logging failure never costs a click.
+app.get("/r/:slug", (c) => {
+  const slug = c.req.param("slug");
+  if (getTenant(slug)) {
+    logMessage({ direction: "system", phone: `link:${slug}`, name: "pitch link opened",
+                 text: `opened /r/${slug}`, channel: "link" })
+      .catch((e) => console.error("[link] log failed:", e.message));
+  }
+  return c.redirect(`/demo.html?via=zojo&t=${encodeURIComponent(slug)}`);
+});
 
 export default app;
 
