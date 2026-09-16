@@ -95,7 +95,7 @@ async function complete(body) {
 // on questions as ordinary as Sunday hours (found 14 Sep 2026 while probing a live pitch link).
 // Only openers that no receptionist would ever say stay in the list; the real detector is REASONING_TELL.
 const REASONING_OPENER = /^\s*(the user|the assistant|okay,|ok,|alright,|let'?s|first,|so,|now,|according to|based on the rules|per the rules|hmm)\b/i;
-const REASONING_TELL = /\b(we need to|we should|i should|i need to|the user (asks|says|wants|is asking)|the (question|answer) is\b(?!\s*[a-z]*\s*(yes|no)\b)|they are asking|according to (the )?rules|per the rules|the rule:|instruction says|let'?s do that|thus:|so we (should|can|could)|probably answer)\b/i;
+const REASONING_TELL = /\b(we need to|we should|we never|we'?re (told|asked)|i should|i need to|the (user|caller|patient|customer) (asks|says|wants|is asking|hasn'?t|haven'?t)|the (question|answer) is\b(?!\s*[a-z]*\s*(yes|no)\b)|they (are|'?re) asking|they (hasn'?t|haven'?t|don'?t)|since (they|he|she|the (user|caller|patient))|according to (the )?rules|per (the )?rules?|per rule \d|rule \d\b|the rule:|escalation is|instruction says|let'?s do that|thus:|so we (should|can|could)|probably answer)\b/i;
 
 export function cleanReply(raw, system = "", userText = "") {
   let t = String(raw || "");
@@ -120,14 +120,17 @@ export function cleanReply(raw, system = "", userText = "") {
     if (quoted.length) t = quoted[quoted.length - 1];
     else return "";
   }
-  // a model that parrots a line of its own instructions is not answering the caller
+  // a model that parrots a line of its own instructions is not answering the caller.
+  // Compared on letters and digits only: the persona line is spelled You are "Asha", ...
+  // and an echo drops the quotes, so a raw substring test missed it (16 Sep 2026).
   // only the INSTRUCTION half of the prompt - the SERVICES list is legitimate material for an answer
   // The "Hours:" line is a FACT the caller is entitled to hear back verbatim, not an instruction, and the
   // 12-char threshold made "Mon-Sun 9:00-21:00" look like parroting. 40 chars still catches a real echo.
   const rules = system
     ? system.split(/\nSERVICES\n|\nPRICE LIST/)[0].replace(/^Today is .*$|^Hours: .*$/gim, " ")
     : "";
-  if (rules && t.length > 40 && rules.replace(/\s+/g, " ").includes(t.replace(/\s+/g, " "))) return "";
+  const bare = (x) => String(x).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  if (rules && t.length > 40 && bare(rules).includes(bare(t))) return "";
   // some free models echo the caller's own message straight back
   const norm = (x) => String(x).toLowerCase().replace(/[^a-z0-9 ]/g, "").replace(/\s+/g, " ").trim();
   if (userText && norm(t) === norm(userText)) return "";
