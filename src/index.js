@@ -104,9 +104,19 @@ app.get("/dashboard", (c) => c.redirect("/dashboard.html"));
 app.get("/voice", (c) => c.redirect("/voice.html"));
 // Per-tenant receptionist demo: /r/<slug> is the link that goes in a pitch.
 // Public tenant card for the demo page (name + suggested prompts only, never the whole config).
-app.get("/api/tenant/:slug", (c) => {
+app.get("/api/tenant/:slug", async (c) => {
   const t = getTenant(c.req.param("slug"));
   if (!t) return c.json({ error: "unknown tenant" }, 404);
+  // Vercel serves demo.html straight for /r/<slug>, so the /r/:slug route below never runs in
+  // production and no open was ever logged (found 17 Sep 2026). The page asks for its tenant card
+  // with ?open=1 when it was reached from a pitch link; that call always hits this function.
+  // Pre-flight checks call this endpoint WITHOUT the flag, so they never count as an open.
+  if (c.req.query("open") === "1") {
+    const slug = c.req.param("slug");
+    await logMessage({ direction: "system", phone: `link:${slug}`, name: "pitch link opened",
+                       text: `opened /r/${slug}`, channel: "link" })
+      .catch((e) => console.error("[link] log failed:", e.message));
+  }
   return c.json({ name: t.name, assistant: t.assistant || "Asha", category: t.category, area: t.area, prompts: t.prompts || [] });
 });
 // Every pitch link opened is logged, because without it a silent batch is unattributable:

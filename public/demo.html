@@ -67,7 +67,7 @@ async function reset(e){e.preventDefault();await fetch('/api/reset',{method:'POS
 async function boot(){
   if(TENANT){
     try{
-      const r=await fetch('/api/tenant/'+encodeURIComponent(TENANT));
+      const r=await fetch('/api/tenant/'+encodeURIComponent(TENANT)+(PATH_SLUG?'?open=1':''));
       if(r.ok){
         const t=await r.json();
         BIZ=t.name||BIZ;
