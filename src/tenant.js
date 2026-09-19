@@ -18,7 +18,9 @@ try {
 
 export function getTenant(slug) {
   if (!slug) return null;
-  return TENANTS[String(slug).toLowerCase()] || null;
+  const s = String(slug).toLowerCase();
+  // some slugs were cut mid-word and end in "-"; apps that linkify the pitch often drop it
+  return TENANTS[s] || TENANTS[s + "-"] || null;
 }
 
 export function tenantPrompt(t, channel = "whatsapp") {
