@@ -3209,5 +3209,173 @@
    "Do you do ultrasound?",
    "Are you open on Sunday?"
   ]
+ },
+ "wellkind-physio-care-home-physiotherap": {
+  "name": "Wellkind Physio Care - Home Physiotherapy, Affordable Physiotherapy Cl",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "yos-sports-health-specialists": {
+  "name": "YOS Sports Health Specialists",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "rebalance-physiotherapy-clinic": {
+  "name": "ReBalance Physiotherapy Clinic",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "insync-physiotherapy-sports-rehabilita": {
+  "name": "Insync Physiotherapy & Sports Rehabilitation - Whitefield",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "bps-physiotherapy-at-home": {
+  "name": "BPS PHYSIOTHERAPY at home",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "cosmic-performance-physiotherapy-and-s": {
+  "name": "Cosmic Performance -Physiotherapy and Sports Rehabilitation",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "my-phyzio-specialty-sports-physiothera": {
+  "name": "My Phyzio- Specialty Sports Physiotherapy Clinic",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
+ },
+ "credence-physio-physiotherapy-clinic-h": {
+  "name": "Credence Physio Physiotherapy clinic HSR Layout",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "HSR Layout",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ]
  }
 }
