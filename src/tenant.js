@@ -25,9 +25,25 @@ export function getTenant(slug) {
 
 // Only hours read from the business's own Google listing are stated as fact. Template hours were quoted as the
 // clinic's real timings until 21 Sep 2026, and BPS Physiotherapy's verdict on its demo was "it's not smart enough".
+const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+const IDX = { mon: 0, tue: 1, wed: 2, thu: 3, fri: 4, sat: 5, sun: 6 };
+
+/** "Mon-Sat 9:30-18:30, Sun closed" -> ["Monday: 9:30-18:30", ..., "Sunday: closed"]. Unparseable input is returned as is. */
+export function expandHours(h) {
+  const out = new Array(7).fill(null);
+  for (const part of String(h).split(/,\s*(?=(?:mon|tue|wed|thu|fri|sat|sun))/i)) {
+    const m = part.trim().match(/^(mon|tue|wed|thu|fri|sat|sun)[a-z]*(?:\s*-\s*(mon|tue|wed|thu|fri|sat|sun)[a-z]*)?\s+(.+)$/i);
+    if (!m) return [String(h)];
+    const a = IDX[m[1].toLowerCase()], b = m[2] ? IDX[m[2].toLowerCase()] : a;
+    for (let i = a; ; i = (i + 1) % 7) { out[i] = m[3].trim(); if (i === b) break; }
+  }
+  return DAYS.map((d, i) => `${d}: ${out[i] ?? "not listed"}`);
+}
+
 export function hoursLine(t) {
   if (t.hours && (t.hoursSource === "google-maps" || !t.category || t.hoursSource === "owner")) {
-    return `Hours (from ${t.name}'s own listing): ${t.hours}.${t.address ? ` Address: ${t.address}.` : ""}`;
+    // one line per day: a free model given "Mon-Sat 9:30-18:30" answered Saturday with another clinic's hours (21 Sep 2026)
+    return `Hours (from ${t.name}'s own listing) - quote these exactly, never guess:\n${expandHours(t.hours).map((d) => `- ${d}`).join("\n")}${t.address ? `\nAddress: ${t.address}.` : ""}`;
   }
   return `Opening hours have NOT been loaded for ${t.name}. Never state opening hours or say whether the clinic is open or closed on a day: say you will confirm the timings with the team, then offer to take their name and preferred time.`;
 }

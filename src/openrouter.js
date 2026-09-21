@@ -133,7 +133,7 @@ export function cleanReply(raw, system = "", userText = "") {
   // The "Hours:" line is a FACT the caller is entitled to hear back verbatim, not an instruction, and the
   // 12-char threshold made "Mon-Sun 9:00-21:00" look like parroting. 40 chars still catches a real echo.
   const rules = system
-    ? system.split(/\nSERVICES\n|\nPRICE LIST/)[0].replace(/^Today is .*$|^Hours: .*$/gim, " ")
+    ? system.split(/\nSERVICES\n|\nPRICE LIST/)[0].replace(/^Today is .*$|^Hours\b.*$|^- (Mon|Tue|Wed|Thu|Fri|Sat|Sun)[a-z]*day: .*$/gim, " ")
     : "";
   const bare = (x) => String(x).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
   if (rules && t.length > 40 && bare(rules).includes(bare(t))) return "";
@@ -145,6 +145,8 @@ export function cleanReply(raw, system = "", userText = "") {
     const cut = Math.max(t.lastIndexOf("."), t.lastIndexOf("!"), t.lastIndexOf("?"));
     if (cut > 30) t = t.slice(0, cut + 1);
   }
+  // WhatsApp bolds *one* asterisk; free models write markdown **two**, which shows up literally (21 Sep 2026).
+  t = t.replace(/\*\*([^*]+)\*\*/g, "*$1*").replace(/^#+\s*/gm, "");
   t = t.trim();
   // A short fragment with no ending is the tail of reasoning the guards above cut in half
   // ("The question is") - never send it, let the caller's retry produce a real sentence.
