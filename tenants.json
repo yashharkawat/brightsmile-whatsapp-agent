@@ -3320,7 +3320,8 @@
   "assistant": "Asha",
   "category": "physio",
   "area": "Whitefield",
-  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "hours": "Mon-Sat 6:00-20:00, Sun closed",
+  "hoursSource": "google-maps",
   "services": [
    "Back and neck pain",
    "Sports injuries",
@@ -3334,7 +3335,8 @@
    "Do you do home visits?",
    "How many sessions will I need?",
    "Are you open now?"
-  ]
+  ],
+  "address": "1, 1, machaxi Play 9 68, near Parijatha Farm, Siddapura, Whitefield, Bengaluru, Karnataka 560066, India"
  },
  "my-phyzio-specialty-sports-physiothera": {
   "name": "My Phyzio- Specialty Sports Physiotherapy Clinic",
@@ -3377,5 +3379,258 @@
    "How many sessions will I need?",
    "Are you open now?"
   ]
+ },
+ "hope-brain-spine-physiotherapy-rehabil": {
+  "name": "HOPE BRAIN & SPINE Physiotherapy & Rehabilitation Clinic   An Ortho,Ne",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "HSR Layout",
+  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "hoursSource": "google-maps",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ],
+  "address": "2nd & 3rd Floor, RR Arcade, Mangammanapalya Rd, above Indian Sub Post office, Rajiv Gandhi Nagar, 7th Sector, HSR Layout, Bengaluru, Karnataka 560068, India"
+ },
+ "dr-vijay-bhaskar-orthopaedic-joint-rep": {
+  "name": "Dr. Vijay Bhaskar - Orthopaedic & Joint Replacement Surgeon , Sports I",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "HSR Layout",
+  "hours": "Mon-Sat 7:00-21:00, Sun 8:30-13:00",
+  "hoursSource": "google-maps",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ],
+  "address": "Door No. 1587 , Ground Floor, Touchwood Multispeciality Clinic & Diagnostic Center, 27th Main Rd, Sector 2, BDA Layout, HSR Layout, Bengaluru, Karnataka 560102, India"
+ },
+ "health-bloom-i-multispeciality-wellnes": {
+  "name": "Health Bloom I Multispeciality Wellness Clinics I Whitefield",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 8:30-20:30, Sun 8:30-12:30",
+  "hoursSource": "google-maps",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ],
+  "address": "795, 4th Main Rd, BEML Layout 6th Stage, BEML Layout, Whitefield, Bengaluru, Karnataka 560066, India"
+ },
+ "physiostra-best-physiotherapy-chiropra": {
+  "name": "Physiostra - Best Physiotherapy & Chiropractic Clinic",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "HSR Layout",
+  "hours": "Mon-Sun 9:00-21:30",
+  "hoursSource": "google-maps",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ],
+  "address": "1st floor, 1322, 24th Main Rd, Sector 2, HSR Layout, Bengaluru, Karnataka 560102, India"
+ },
+ "rmv-multi-speciality-veterinary-clinic": {
+  "name": "RMV MULTI-SPECIALITY VETERINARY CLINIC",
+  "assistant": "Asha",
+  "category": "veterinary",
+  "area": "Rajajinagar",
+  "hours": "Mon-Sun 10:00-20:00",
+  "hoursSource": "google-maps",
+  "services": [
+   "Consultation and vaccination",
+   "Deworming and grooming",
+   "Surgery and dental",
+   "Diagnostics and lab",
+   "Emergency care"
+  ],
+  "prompts": [
+   "My dog has been vomiting since morning",
+   "Are you open right now?",
+   "Can I bring my cat in this evening?",
+   "Do you do vaccinations?",
+   "Do you take emergencies at night?"
+  ],
+  "address": "269, 4th Main Rd, Mahalakshmipuram Layout, Mahalakshmi Layout, Bengaluru, Karnataka 560086, India"
+ },
+ "odus-dental-clinic-indiranagar-implant": {
+  "name": "Odus Dental Clinic Indiranagar & Implant Centre",
+  "assistant": "Asha",
+  "category": "dental",
+  "area": "Indiranagar",
+  "hours": "Mon-Sat 10:00-21:00, Sun 10:30-20:00",
+  "hoursSource": "google-maps",
+  "services": [
+   "Check-ups and cleaning",
+   "Root canal treatment",
+   "Braces and aligners",
+   "Implants and crowns",
+   "Kids dentistry"
+  ],
+  "prompts": [
+   "Do you do root canals?",
+   "Can I book a cleaning on Saturday morning?",
+   "Make it Sunday instead",
+   "My tooth is bleeding badly",
+   "Are you open now?"
+  ],
+  "address": "3262, 13th Cross Rd, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560008, India"
+ },
+ "emerald-dental": {
+  "name": "Emerald Dental",
+  "assistant": "Asha",
+  "category": "dental",
+  "area": "Indiranagar",
+  "hours": "Mon-Sat 10:00-20:00, Sun 10:00-16:00",
+  "hoursSource": "google-maps",
+  "services": [
+   "Check-ups and cleaning",
+   "Root canal treatment",
+   "Braces and aligners",
+   "Implants and crowns",
+   "Kids dentistry"
+  ],
+  "prompts": [
+   "Do you do root canals?",
+   "Can I book a cleaning on Saturday morning?",
+   "Make it Sunday instead",
+   "My tooth is bleeding badly",
+   "Are you open now?"
+  ],
+  "address": "shop no 127/9, 2a GF, HAL Old Airport Rd, Murugeshpalya, Bengaluru, Karnataka 560017, India"
+ },
+ "tooth-lounge-a-multispeciality-dental-": {
+  "name": "Tooth Lounge A Multispeciality Dental Clinic",
+  "assistant": "Asha",
+  "category": "dental",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 10:00-20:30, Sun closed",
+  "hoursSource": "google-maps",
+  "services": [
+   "Check-ups and cleaning",
+   "Root canal treatment",
+   "Braces and aligners",
+   "Implants and crowns",
+   "Kids dentistry"
+  ],
+  "prompts": [
+   "Do you do root canals?",
+   "Can I book a cleaning on Saturday morning?",
+   "Make it Sunday instead",
+   "My tooth is bleeding badly",
+   "Are you open now?"
+  ],
+  "address": "10/1, 1st floor Saroj Group Studios,Varthur main road Thubarahalli,Whitefield, near HDFC bank, Gate, Kumarapalli, Kundalahalli, Bengaluru, Karnataka 560066, India"
+ },
+ "excellence-dental": {
+  "name": "EXCELLENCE DENTAL",
+  "assistant": "Asha",
+  "category": "dental",
+  "area": "Indiranagar",
+  "hours": "Mon-Sat 9:30-18:30, Sun closed",
+  "hoursSource": "google-maps",
+  "services": [
+   "Check-ups and cleaning",
+   "Root canal treatment",
+   "Braces and aligners",
+   "Implants and crowns",
+   "Kids dentistry"
+  ],
+  "prompts": [
+   "Do you do root canals?",
+   "Can I book a cleaning on Saturday morning?",
+   "Make it Sunday instead",
+   "My tooth is bleeding badly",
+   "Are you open now?"
+  ],
+  "address": "4032, 1st floor, Golden Lights, 100 Feet Rd, above Equitas bank, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560008, India"
+ },
+ "dr-patel-dental-clinic-in-bangalore": {
+  "name": "Dr Patel Dental Clinic in Bangalore",
+  "assistant": "Asha",
+  "category": "dental",
+  "area": "Indiranagar",
+  "hours": "Mon-Sat 8:00-22:00, Sun 9:00-21:00",
+  "hoursSource": "google-maps",
+  "services": [
+   "Check-ups and cleaning",
+   "Root canal treatment",
+   "Braces and aligners",
+   "Implants and crowns",
+   "Kids dentistry"
+  ],
+  "prompts": [
+   "Do you do root canals?",
+   "Can I book a cleaning on Saturday morning?",
+   "Make it Sunday instead",
+   "My tooth is bleeding badly",
+   "Are you open now?"
+  ],
+  "address": "1st Floor, 383, 2nd Main Rd, above New Ram Medicals, Domlur I Stage, 1st Stage, Domlur, Bengaluru, Karnataka 560071, India"
+ },
+ "aesthetique-dental-clinic": {
+  "name": "Aesthetique Dental Clinic",
+  "assistant": "Asha",
+  "category": "dental",
+  "area": "Whitefield",
+  "hours": "Mon-Sat 10:00-19:00, Sun closed",
+  "hoursSource": "google-maps",
+  "services": [
+   "Check-ups and cleaning",
+   "Root canal treatment",
+   "Braces and aligners",
+   "Implants and crowns",
+   "Kids dentistry"
+  ],
+  "prompts": [
+   "Do you do root canals?",
+   "Can I book a cleaning on Saturday morning?",
+   "Make it Sunday instead",
+   "My tooth is bleeding badly",
+   "Are you open now?"
+  ],
+  "address": "G-1, LightsPro towers, 5/1, Gulmohar Enclave Lane, Whitefield, Road, opp. Sankara Eye Hospital, Munnekolala, Bengaluru, Karnataka 560037, India"
  }
 }

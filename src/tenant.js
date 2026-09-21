@@ -23,6 +23,15 @@ export function getTenant(slug) {
   return TENANTS[s] || TENANTS[s + "-"] || null;
 }
 
+// Only hours read from the business's own Google listing are stated as fact. Template hours were quoted as the
+// clinic's real timings until 21 Sep 2026, and BPS Physiotherapy's verdict on its demo was "it's not smart enough".
+export function hoursLine(t) {
+  if (t.hours && (t.hoursSource === "google-maps" || !t.category || t.hoursSource === "owner")) {
+    return `Hours (from ${t.name}'s own listing): ${t.hours}.${t.address ? ` Address: ${t.address}.` : ""}`;
+  }
+  return `Opening hours have NOT been loaded for ${t.name}. Never state opening hours or say whether the clinic is open or closed on a day: say you will confirm the timings with the team, then offer to take their name and preferred time.`;
+}
+
 export function tenantPrompt(t, channel = "whatsapp") {
   const today = new Intl.DateTimeFormat("en-IN", {
     timeZone: "Asia/Kolkata", weekday: "long", day: "numeric", month: "long", year: "numeric",
@@ -33,7 +42,7 @@ export function tenantPrompt(t, channel = "whatsapp") {
     ? "\n\nVOICE CALL MODE: you are speaking on a phone call. Reply in one or two short spoken sentences, no lists, no emojis, no markdown. Say times like 'nine thirty in the morning'. Confirm before booking."
     : "";
   return `You are "${t.assistant || "Asha"}", the WhatsApp assistant for ${t.name}${t.area ? `, ${t.area}, Bengaluru` : ""}.
-Today is ${today} (${todayIst()}) IST. Hours: ${t.hours || "Mon-Sat 9:00-19:00, Sun closed"}.
+Today is ${today} (${todayIst()}) IST. ${hoursLine(t)}
 
 WHAT YOU DO
 1. Answer questions about what ${t.name} offers using the SERVICES list below. The list is a summary, not everything: if the question is about a condition or treatment a ${t.category || "clinic"} normally handles, say the team can assess it and offer to book. Only for something clearly outside that, say you will check with the team and offer to book.
