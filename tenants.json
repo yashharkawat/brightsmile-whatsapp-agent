@@ -1481,7 +1481,8 @@
   "assistant": "Asha",
   "category": "dental",
   "area": "Jayanagar",
-  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "hours": "Mon-Sat 9:00-21:00, Sun 9:00-19:00",
+  "hoursSource": "google-maps",
   "services": [
    "Check-ups and cleaning",
    "Root canal treatment",
@@ -1495,7 +1496,8 @@
    "Make it Sunday instead",
    "My tooth is bleeding badly",
    "Are you open now?"
-  ]
+  ],
+  "address": "884, 19th main, 39th Cross Rd, 4th T Block East, Jayanagar, Bengaluru, Karnataka 560041, India"
  },
  "little-pearls-dental-clinic": {
   "name": "LITTLE PEARLS Dental Clinic",
@@ -1544,7 +1546,8 @@
   "assistant": "Asha",
   "category": "dental",
   "area": "Jayanagar",
-  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "hours": "Mon-Sat 11:30-20:00, Sun 10:00-18:30",
+  "hoursSource": "google-maps",
   "services": [
    "Check-ups and cleaning",
    "Root canal treatment",
@@ -1558,14 +1561,16 @@
    "Make it Sunday instead",
    "My tooth is bleeding badly",
    "Are you open now?"
-  ]
+  ],
+  "address": "1st Floor, 9th Main Rd, above Sri Ambati Jewellers, near Apollo Hospital, Jaya Nagar 1st Block, Jayanagar 3rd Block, Jayanagar, Bengaluru, Karnataka 560011, India"
  },
  "smitha-dental-implants-aesthetics-best": {
   "name": "Smitha Dental, Implants & Aesthetics   Best Dentist in Jayanagar Banga",
   "assistant": "Asha",
   "category": "dental",
   "area": "Jayanagar",
-  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "hours": "Mon-Fri 10:00-20:30, Sat 10:00-21:00, Sun 11:00-17:00",
+  "hoursSource": "google-maps",
   "services": [
    "Check-ups and cleaning",
    "Root canal treatment",
@@ -1579,7 +1584,8 @@
    "Make it Sunday instead",
    "My tooth is bleeding badly",
    "Are you open now?"
-  ]
+  ],
+  "address": "South, E End Main Rd, Jayanagara 9th Block, Jayanagar, Bengaluru, Karnataka 560041, India"
  },
  "digital-kora": {
   "name": "Digital Kora",
@@ -2241,7 +2247,8 @@
   "assistant": "Asha",
   "category": "dental",
   "area": "Jayanagar",
-  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "hours": "Mon-Sat 10:00-14:00 and 17:00-21:00, Sun closed",
+  "hoursSource": "google-maps",
   "services": [
    "Check-ups and cleaning",
    "Root canal treatment",
@@ -2255,7 +2262,8 @@
    "Make it Sunday instead",
    "My tooth is bleeding badly",
    "Are you open now?"
-  ]
+  ],
+  "address": "1st floor, SRIDS Arcade, 46th Cross Rd, 8th Block, Jayanagar, Bengaluru, Karnataka 560070, India"
  },
  "samved-family-dental-care": {
   "name": "Samved Family Dental Care",
@@ -2430,7 +2438,8 @@
   "assistant": "Asha",
   "category": "dental",
   "area": "Indiranagar",
-  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "hours": "Mon-Sat 10:30-20:00, Sun closed",
+  "hoursSource": "google-maps",
   "services": [
    "Check-ups and cleaning",
    "Root canal treatment",
@@ -2444,14 +2453,16 @@
    "Make it Sunday instead",
    "My tooth is bleeding badly",
    "Are you open now?"
-  ]
+  ],
+  "address": "837/1 ,7th main, 2nd cross, Ambedkar college road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560038, India"
  },
  "dezy-dental": {
   "name": "Dezy Dental",
   "assistant": "Asha",
   "category": "dental",
   "area": "Indiranagar",
-  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "hours": "Mon 11:00-19:30, Tue closed, Wed-Sun 11:00-19:30",
+  "hoursSource": "google-maps",
   "services": [
    "Check-ups and cleaning",
    "Root canal treatment",
@@ -2465,7 +2476,8 @@
    "Make it Sunday instead",
    "My tooth is bleeding badly",
    "Are you open now?"
-  ]
+  ],
+  "address": "No. 197/1, Ground Floor, 2nd Stage, Binnamangala, Indiranagar, Bengaluru, Karnataka 560038, India"
  },
  "smile-station-indiranagar-dentist-dent": {
   "name": "Smile Station - Indiranagar   Dentist   Dental Clinic",
@@ -2577,7 +2589,8 @@
   "assistant": "Asha",
   "category": "dental",
   "area": "Whitefield",
-  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "hours": "Mon-Sat 10:00-20:00, Sun 9:00-17:00",
+  "hoursSource": "google-maps",
   "services": [
    "Check-ups and cleaning",
    "Root canal treatment",
@@ -2591,14 +2604,16 @@
    "Make it Sunday instead",
    "My tooth is bleeding badly",
    "Are you open now?"
-  ]
+  ],
+  "address": "Second Floor, Bangalore Pet Hospital Building, Varthur Main Rd, Patel Narayanswamy Layout, Siddapura, Whitefield, Bengaluru, Karnataka 560066, India"
  },
  "smiles-on": {
   "name": "Smiles On",
   "assistant": "Asha",
   "category": "dental",
   "area": "Whitefield",
-  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "hours": "Mon-Sat 10:00-20:30, Sun closed",
+  "hoursSource": "google-maps",
   "services": [
    "Check-ups and cleaning",
    "Root canal treatment",
@@ -2612,14 +2627,16 @@
    "Make it Sunday instead",
    "My tooth is bleeding badly",
    "Are you open now?"
-  ]
+  ],
+  "address": "294, 8th Main Rd, near kundalahalli, BEML Layout 6th Stage, gate, Brookefield, Bengaluru, Karnataka 560066, India"
  },
  "smile-zone-dental-speciality-centre": {
   "name": "Smile Zone Dental Speciality Centre",
   "assistant": "Asha",
   "category": "dental",
   "area": "Whitefield",
-  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "hours": "Mon-Sat 9:00-20:00, Sun closed",
+  "hoursSource": "google-maps",
   "services": [
    "Check-ups and cleaning",
    "Root canal treatment",
@@ -2633,7 +2650,8 @@
    "Make it Sunday instead",
    "My tooth is bleeding badly",
    "Are you open now?"
-  ]
+  ],
+  "address": "275, 2nd Floor, Whitefield Main Road, Landmark:, beside Vijaya Bank, next to Cult Fitness and Domino”s Pizza, Bengaluru, Karnataka 560066, India"
  },
  "ivory-smiles-dental-clinic": {
   "name": "Ivory Smiles Dental Clinic",
@@ -2703,7 +2721,8 @@
   "assistant": "Asha",
   "category": "dental",
   "area": "Marathahalli",
-  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "hours": "Mon-Sun 9:30-21:30",
+  "hoursSource": "google-maps",
   "services": [
    "Check-ups and cleaning",
    "Root canal treatment",
@@ -2717,7 +2736,8 @@
    "Make it Sunday instead",
    "My tooth is bleeding badly",
    "Are you open now?"
-  ]
+  ],
+  "address": "Phoeniix Dental Care & Implant Centre, 480, 2nd Main Road, Marathalli Brg, above Maitri Amrut Tea, Aswath Nagar, Marathahalli, Bengaluru, Karnataka 560037, India"
  },
  "the-urban-dental-clinic": {
   "name": "The Urban Dental clinic",
@@ -2850,7 +2870,8 @@
   "assistant": "Asha",
   "category": "dental",
   "area": "Marathahalli",
-  "hours": "Mon-Sat 9:30-19:30, Sun closed",
+  "hours": "Mon-Sat 11:00-19:00, Sun 11:00-14:00",
+  "hoursSource": "google-maps",
   "services": [
    "Check-ups and cleaning",
    "Root canal treatment",
@@ -2864,7 +2885,8 @@
    "Make it Sunday instead",
    "My tooth is bleeding badly",
    "Are you open now?"
-  ]
+  ],
+  "address": "2nd floor, 36/1, Marathahalli - Sarjapura Outer Ring Road, opposite PRESTIGE TECH PARK, next to Indiqube Alpha, Kadubeesanahalli, gamma, Bengaluru, Karnataka 560103, India"
  },
  "the-smile-designerz-dental-clinic-impl": {
   "name": "The Smile Designerz Dental Clinic (Implants,Braces,Cosmetic)JP Nagar,B",
@@ -3039,7 +3061,8 @@
   "assistant": "Asha",
   "category": "physio",
   "area": "Koramangala",
-  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "hours": "Mon-Sat 9:00-21:00, Sun 10:00-15:00",
+  "hoursSource": "google-maps",
   "services": [
    "Back and neck pain",
    "Knee pain and arthritis",
@@ -3055,7 +3078,8 @@
    "Do you do home visits?",
    "How many sessions will I need?",
    "Are you open now?"
-  ]
+  ],
+  "address": "Near Koramangala Club, 69, 17th E Main Rd, 6th Block, Koramangala, Bengaluru, Karnataka 560095, India"
  },
  "balance-plus-physiotherapy-clinic-kora": {
   "name": "Balance Plus Physiotherapy Clinic - Koramangala Bangalore",
@@ -3108,7 +3132,8 @@
   "assistant": "Asha",
   "category": "physio",
   "area": "Koramangala",
-  "hours": "Mon-Sat 8:00-20:00, Sun closed",
+  "hours": "Mon-Fri 6:00-20:00, Sat 6:00-17:00, Sun 7:00-16:00",
+  "hoursSource": "google-maps",
   "services": [
    "Back and neck pain",
    "Knee pain and arthritis",
@@ -3124,7 +3149,8 @@
    "Do you do home visits?",
    "How many sessions will I need?",
    "Are you open now?"
-  ]
+  ],
+  "address": "No.9, Shanthi Nagar Society, Sub Post office, Inside Social Grid Turfpark Koramangala, Sy no. 6, behind BDA Park, Jakkasandra Extension, Koramangala, Bengaluru, Karnataka 560043, India"
  },
  "bone-and-joint-consult-clinic": {
   "name": "Bone and joint Consult clinic",
@@ -3632,5 +3658,51 @@
    "Are you open now?"
   ],
   "address": "G-1, LightsPro towers, 5/1, Gulmohar Enclave Lane, Whitefield, Road, opp. Sankara Eye Hospital, Munnekolala, Bengaluru, Karnataka 560037, India"
+ },
+ "dr-heal-pain-cure-hospital": {
+  "name": "Dr. Heal Pain Cure Hospital",
+  "assistant": "Asha",
+  "category": "physio",
+  "area": "HSR Layout",
+  "hours": "Mon-Sun open 24 hours",
+  "hoursSource": "google-maps",
+  "services": [
+   "Back and neck pain",
+   "Sports injuries",
+   "Post-surgery rehab",
+   "Home visits",
+   "Dry needling"
+  ],
+  "prompts": [
+   "Do you treat frozen shoulder?",
+   "Can I book a session on Saturday?",
+   "Do you do home visits?",
+   "How many sessions will I need?",
+   "Are you open now?"
+  ],
+  "address": "Ganapa arcade, 392, 9th Main Rd, 7th Sector, HSR Layout, Bengaluru, Karnataka 560102, India"
+ },
+ "narayana-specialists-dental-and-implan": {
+  "name": "Narayana Specialists Dental and Implant Center",
+  "assistant": "Asha",
+  "category": "dental",
+  "area": "Indiranagar",
+  "hours": "Mon-Sat 9:00-21:00, Sun closed",
+  "hoursSource": "google-maps",
+  "services": [
+   "Check-ups and cleaning",
+   "Root canal treatment",
+   "Braces and aligners",
+   "Implants and crowns",
+   "Kids dentistry"
+  ],
+  "prompts": [
+   "Do you do root canals?",
+   "Can I book a cleaning on Saturday morning?",
+   "Make it Sunday instead",
+   "My tooth is bleeding badly",
+   "Are you open now?"
+  ],
+  "address": "Landmark : Front of Vasant Gas Agency, 869, 5th Cross Rd, Binnamangala, Old, Indiranagar, Bengaluru, Karnataka 560038, India"
  }
 }
